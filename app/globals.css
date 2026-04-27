@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Kooperativ';
+  src: url('/fonts/STKooperativRegular.woff2') format('woff2'),
+       url('/fonts/STKooperativRegular.woff') format('woff'),
+       url('/fonts/STKooperativRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --kc-black:        #0A0A0A;
+  --kc-bone:         #F4F1EA;
+  --kc-paper:        #FFFFFF;
+  --kc-pitch:        #000000;
+  --kc-ash:          #6B6B6B;
+  --kc-fog:          #A8A8A8;
+  --kc-concrete:     #D9D6CF;
+  --kc-line:         #1F1F1F;
+
+  --bg:              var(--kc-bone);
+  --bg-inverse:      var(--kc-black);
+  --bg-card:         var(--kc-paper);
+
+  --fg1:             var(--kc-black);
+  --fg2:             #2A2A2A;
+  --fg3:             var(--kc-ash);
+  --fg-inverse:      var(--kc-bone);
+  --fg-muted-inverse:#B8B5AE;
+
+  --border:          var(--kc-black);
+  --border-hairline: rgba(10,10,10,0.18);
+
+  --shadow-hard:    6px 6px 0 var(--kc-black);
+  --shadow-hard-lg: 10px 10px 0 var(--kc-black);
+
+  --font-display: 'Kooperativ', 'Impact', sans-serif;
+  --font-headline:'Oswald', 'Impact', sans-serif;
+  --font-body:    'Archivo', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-snap: cubic-bezier(.2, .8, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--kc-bone);
+  color: var(--fg1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; }
+
+::selection { background: var(--kc-black); color: var(--kc-bone); }
