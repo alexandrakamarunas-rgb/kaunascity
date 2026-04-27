@@ -123,7 +123,7 @@ export default function Register() {
               <LT>Forma siunčiama į info@kaunascityfa.lt</LT>
             </div>
             <Button type="submit" disabled={state.submitting}>
-              {state.submitting ? 'Siunčiama...' : 'Siųsti registracija →'}
+              {state.submitting ? 'Siunčiama...' : 'Siųsti'}
             </Button>
           </div>
 

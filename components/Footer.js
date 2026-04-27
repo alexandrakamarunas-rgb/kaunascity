@@ -43,7 +43,7 @@ export default function Footer() {
             fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase',
             color: 'var(--fg-muted-inverse)',
           }}>
-            Akademija · III lyga · LT
+            Akademija · III lyga
           </div>
         </div>
         {sections.map(([title, links]) => (

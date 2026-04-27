@@ -115,6 +115,19 @@ h1, h2, h3, h4 { margin: 0; }
 .page-pad  { padding: var(--kc-pad-y) var(--kc-pad-x); }
 .hero-pad  { padding: var(--kc-hero-pt) var(--kc-pad-x) var(--kc-hero-pb); }
 
+/* Marquee ticker */
+@keyframes kc-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: kc-marquee 22s linear infinite;
+  will-change: transform;
+}
+
 /* Two-column grids → single column on mobile */
 .hero-grid {
   display: grid;

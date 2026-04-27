@@ -2,6 +2,19 @@
 import Link from 'next/link';
 import { Eyebrow, Rule, Button, Section, Photo, LT } from './Bits';
 
+const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</span>;
+
+const MarqueeItems = () => (
+  <span style={{ display: 'inline-flex', alignItems: 'center', paddingRight: 24 }}>
+    <span>5–12 <LT>metų</LT></span>
+    <Sep /><span><LT>2 grupės</LT></span>
+    <Sep /><span><LT>3 treniruotės / sav.</LT></span>
+    <Sep /><span>III lyga</span>
+    <Sep /><span>Lapiu stadionas</span>
+    <Sep />
+  </span>
+);
+
 export default function Home() {
   return (
     <>
@@ -50,25 +63,20 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* MARQUEE STRIP */}
+      {/* MARQUEE STRIP — animated ticker */}
       <div style={{
         background: 'var(--kc-bone)',
         borderTop: '2px solid var(--kc-black)',
         borderBottom: '2px solid var(--kc-black)',
-        padding: '12px 0', overflow: 'hidden', whiteSpace: 'nowrap',
-        fontFamily: 'var(--font-display)',
-        fontSize: 'clamp(18px, 4vw, 28px)',
-        textTransform: 'uppercase', letterSpacing: '-.01em',
+        padding: '12px 0', overflow: 'hidden',
+        fontFamily: 'var(--font-headline)',
+        fontWeight: 700,
+        fontSize: 'clamp(14px, 2.5vw, 22px)',
+        textTransform: 'uppercase', letterSpacing: '.06em',
       }}>
-        <span style={{ marginLeft: 20 }}>5–12 <LT>metų</LT></span>
-        <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span><LT>2 grupės</LT></span>
-        <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span><LT>3 treniruotės / sav.</LT></span>
-        <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span>III lyga</span>
-        <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span>Lapiu stadionas</span>
+        <div className="marquee-track" aria-hidden="true">
+          <MarqueeItems /><MarqueeItems /><MarqueeItems />
+        </div>
       </div>
 
       {/* TWO-PRONG CARDS */}
@@ -77,12 +85,12 @@ export default function Home() {
           {[
             {
               eb: 'Vaikams', title: 'Akademija', sub: '5–12 m.',
-              body: 'Dvi amžiaus grupės, trys treniruotės per savaitę Lapių mokyklos stadione. Futbolas — visiems vaikams, kurie nori žaisti.',
+              body: 'Dvi amžiaus grupės, trys treniruotės per savaitę Lapių mokyklos stadione.',
               cta: 'Daugiau →', href: '/akademija',
             },
             {
               eb: 'Suaugusiems', title: 'Komanda', sub: 'III lyga',
-              body: 'Kovojome KMFL 7×7 čempionų titulą, dabar žaidžiame KAFF–MAFF III lygoje.',
+              body: 'Iškovojome KMFL 7×7 čempionų titulą, dabar žaidžiame KAFF–MAFF III lygoje.',
               cta: 'Apie komanda →', href: '/komanda',
             },
           ].map((c, i) => (

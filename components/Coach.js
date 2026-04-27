@@ -10,7 +10,7 @@ export default function Coach() {
           ratio="3 / 4"
           style={{ minHeight: 320 }}
           objectPosition="50% 5%"
-          caption="Akademija · treniruotė"
+          caption="vyriausias treneris"
         />
         <div>
           <Eyebrow>Vyriausiasis treneris · Akademija + III lyga</Eyebrow>

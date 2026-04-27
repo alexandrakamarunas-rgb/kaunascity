@@ -13,7 +13,7 @@ const groups = [
     focus: 'Pirmieji prisilietimai prie kamuolio, koordinacija ir žaidimas su draugais. Smagu, saugu, kasmet šiek tiek rimčiau.',
   },
   {
-    ageLines: ['9–', '12'],
+    ageLines: ['9–12'],
     name: 'Komanda',
     schedule: [
       ['Antr', '17:00–18:00'],
@@ -45,7 +45,7 @@ export default function Academy() {
             ratio="21 / 9"
             style={{ width: '100%' }}
             objectPosition="50% 35%"
-            caption="Kaunas City Cup · akademija"
+            caption="vaikų komanda"
           />
         </div>
 
