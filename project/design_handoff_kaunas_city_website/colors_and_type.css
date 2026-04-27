@@ -1,0 +1,198 @@
+/* ===========================================================
+   KAUNAS CITY FA — Colors & Type
+   Monochrome / brutalist / soviet-poster aesthetic
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Kooperativ — soviet-poster slab. Two cuts: clean Regular and distressed Scratched. */
+@font-face {
+  font-family: 'Kooperativ';
+  src: url('fonts/STKooperativRegular.woff2') format('woff2'),
+       url('fonts/STKooperativRegular.woff')  format('woff'),
+       url('fonts/STKooperativRegular.ttf')   format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Kooperativ Scratched';
+  src: url('fonts/STKooperativScratched.woff') format('woff'),
+       url('fonts/STKooperativScratched.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- CORE PALETTE ---------- */
+  --kc-black:        #0A0A0A;   /* not pure black; ink */
+  --kc-bone:         #F4F1EA;   /* warm off-white, like newsprint */
+  --kc-paper:        #FFFFFF;
+  --kc-pitch:        #000000;   /* used only for crest */
+  --kc-ash:          #6B6B6B;   /* mid grey from crest fills */
+  --kc-fog:          #A8A8A8;   /* lighter grey from crest */
+  --kc-concrete:     #D9D6CF;   /* warm light grey */
+  --kc-line:         #1F1F1F;
+
+  /* Single accent — kept tight on purpose */
+  --kc-pitch-stripe: #C8C2B6;   /* stadium grass-against-concrete tone */
+
+  /* ---------- SEMANTIC TOKENS ---------- */
+  --bg:              var(--kc-bone);
+  --bg-inverse:      var(--kc-black);
+  --bg-card:         var(--kc-paper);
+  --bg-elevated:     var(--kc-paper);
+
+  --fg1:             var(--kc-black);   /* primary text */
+  --fg2:             #2A2A2A;           /* body */
+  --fg3:             var(--kc-ash);     /* meta */
+  --fg-inverse:      var(--kc-bone);
+  --fg-muted-inverse:#B8B5AE;
+
+  --border:          var(--kc-black);
+  --border-hairline: rgba(10,10,10,0.18);
+  --border-inverse:  var(--kc-bone);
+
+  --accent:          var(--kc-black);   /* the brand IS black */
+  --on-accent:       var(--kc-bone);
+
+  --success:         #2E7D32;
+  --warning:         #B26A00;
+  --danger:          #B00020;
+
+  /* ---------- SPACING (8pt-ish, but deliberately chunky) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- RADII (mostly NONE — brand is hard-edged) ---------- */
+  --radius-0:  0px;
+  --radius-1:  2px;
+  --radius-2:  4px;
+  --radius-pill: 999px;
+
+  /* ---------- BORDERS ---------- */
+  --stroke-1: 1px;
+  --stroke-2: 2px;
+  --stroke-3: 4px;
+  --stroke-4: 8px;   /* signature heavy rule */
+
+  /* ---------- SHADOWS (used sparingly; we prefer hard offsets) ---------- */
+  --shadow-sm: 0 1px 0 rgba(10,10,10,0.08);
+  --shadow-md: 0 4px 0 rgba(10,10,10,0.12);
+  --shadow-hard: 6px 6px 0 var(--kc-black);   /* poster-style hard drop */
+  --shadow-hard-lg: 10px 10px 0 var(--kc-black);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: 'Kooperativ', 'Bowlby One', 'Impact', sans-serif;       /* poster slab */
+  --font-headline:'Oswald', 'Bebas Neue', 'Impact', sans-serif;      /* condensed sport */
+  --font-body:    'Archivo', 'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* ---------- MOTION ---------- */
+  --ease-snap: cubic-bezier(.2, .8, .2, 1);
+  --ease-out:  cubic-bezier(.16, 1, .3, 1);
+  --dur-fast: 120ms;
+  --dur-med:  220ms;
+  --dur-slow: 380ms;
+}
+
+/* ===========================================================
+   SEMANTIC TYPE STYLES
+   =========================================================== */
+
+html, body {
+  font-family: var(--font-body);
+  color: var(--fg1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.kc-display, h1.kc-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 128px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.kc-h1, h1 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.kc-h2, h2 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.kc-h3, h3 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.kc-eyebrow {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+.kc-body, p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--fg2);
+}
+
+.kc-lead {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--fg1);
+}
+
+.kc-meta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+.kc-mono, code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* selection — sharp, no fade */
+::selection { background: var(--kc-black); color: var(--kc-bone); }

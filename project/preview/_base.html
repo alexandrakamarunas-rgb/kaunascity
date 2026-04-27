@@ -1,0 +1,18 @@
+<!-- shared bootstrap for preview cards. Cards include this via @import. -->
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--kc-bone); }
+  .card {
+    width: 700px;
+    box-sizing: border-box;
+    padding: 20px 24px;
+    background: var(--kc-bone);
+    color: var(--fg1);
+    font-family: var(--font-body);
+  }
+  .card.dark { background: var(--kc-black); color: var(--fg-inverse); }
+  .row { display: flex; gap: 12px; align-items: stretch; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--fg3); }
+  .label.inv { color: var(--fg-muted-inverse); }
+</style>

@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--kc-bone)}
+  .card{width:700px;box-sizing:border-box;padding:24px 28px;background:var(--kc-bone);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:200px}
+  label{font-family:var(--font-headline);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg2)}
+  input,select{font-family:var(--font-body);font-size:15px;padding:10px 12px;background:var(--kc-paper);border:2px solid var(--kc-black);border-radius:2px;color:var(--kc-black);outline:none}
+  input:focus,select:focus{outline:2px solid var(--kc-black);outline-offset:2px}
+  .chk{display:flex;align-items:center;gap:10px;font-family:var(--font-headline);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+  .chk input{appearance:none;width:18px;height:18px;border:2px solid var(--kc-black);background:var(--kc-paper);cursor:pointer;margin:0;padding:0;display:grid;place-items:center}
+  .chk input:checked{background:var(--kc-black)}
+  .chk input:checked::after{content:"";width:8px;height:8px;background:var(--kc-bone)}
+</style></head><body><div class="card">
+<div class="field"><label>Email</label><input value="ultras@kaunascity.lt"></div>
+<div class="field"><label>Stand</label><select><option>North · €8</option><option>East Seat · €15</option></select></div>
+<label class="chk"><input type="checkbox" checked>Members only</label>
+</div></body></html>

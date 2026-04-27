@@ -1,0 +1,146 @@
+// Atoms shared across the kit. LT copy, monochrome.
+const { useState } = React;
+
+// LT — wraps display text. The Kooperativ poster font has no Lithuanian diacritics,
+// so any string containing ąčęėįšųūž falls back to Oswald (which has full LT support)
+// at the same size. Use this in any display-font heading that may include LT chars.
+const LT_DIACRITIC = /[ąčęėįšųūžĄČĘĖĮŠŲŪŽ]/;
+const LT = ({ children, style }) => {
+  const text = React.Children.toArray(children).join('');
+  const needsFallback = LT_DIACRITIC.test(text);
+  return (
+    <span style={{
+      fontFamily: needsFallback ? 'var(--font-headline)' : 'inherit',
+      fontWeight: needsFallback ? 700 : 'inherit',
+      ...style,
+    }}>{children}</span>
+  );
+};
+
+const Eyebrow = ({ children, inverse }) => (
+  <div style={{
+    fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
+    letterSpacing: '.22em', textTransform: 'uppercase',
+    color: inverse ? 'var(--fg-muted-inverse)' : 'var(--fg3)',
+  }}>{children}</div>
+);
+
+const Rule = ({ width = 64, weight = 4, inverse }) => (
+  <div style={{
+    height: weight, width, background: inverse ? 'var(--kc-bone)' : 'var(--kc-black)',
+  }}/>
+);
+
+const Button = ({ children, variant = 'primary', size = 'md', onClick, disabled }) => {
+  const isPrimary = variant === 'primary';
+  const isInverse = variant === 'inverse';
+  const isGhost = variant === 'ghost';
+  const padding = size === 'sm' ? '8px 14px' : size === 'lg' ? '18px 28px' : '14px 22px';
+  const fontSize = size === 'sm' ? 11 : size === 'lg' ? 16 : 14;
+  const [pressed, setPressed] = useState(false);
+  const [hover, setHover] = useState(false);
+  const bg = isPrimary ? (hover ? 'var(--kc-bone)' : 'var(--kc-black)')
+           : isInverse ? (hover ? 'var(--kc-black)' : 'var(--kc-bone)')
+           : (hover ? 'var(--kc-black)' : 'transparent');
+  const color = isPrimary ? (hover ? 'var(--kc-black)' : 'var(--kc-bone)')
+              : isInverse ? (hover ? 'var(--kc-bone)' : 'var(--kc-black)')
+              : (hover ? 'var(--kc-bone)' : 'var(--kc-black)');
+  const shadow = isGhost ? 'none' : (pressed ? '4px 4px 0 var(--kc-black)' : 'var(--shadow-hard)');
+  return (
+    <button
+      onClick={onClick} disabled={disabled}
+      onMouseEnter={() => setHover(true)} onMouseLeave={() => { setHover(false); setPressed(false); }}
+      onMouseDown={() => setPressed(true)} onMouseUp={() => setPressed(false)}
+      style={{
+        fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize,
+        letterSpacing: '.16em', textTransform: 'uppercase',
+        padding, border: '2px solid var(--kc-black)',
+        background: bg, color,
+        cursor: disabled ? 'not-allowed' : 'pointer',
+        boxShadow: shadow,
+        transform: pressed ? 'translate(2px, 2px)' : 'none',
+        transition: 'transform 120ms var(--ease-snap), box-shadow 120ms var(--ease-snap), background 120ms, color 120ms',
+        opacity: disabled ? 0.3 : 1,
+      }}>{children}</button>
+  );
+};
+
+const Badge = ({ children, tone = 'solid' }) => {
+  const styles = {
+    solid: { background: 'var(--kc-black)', color: 'var(--kc-bone)', border: '2px solid var(--kc-black)' },
+    bone:  { background: 'var(--kc-bone)',  color: 'var(--kc-black)', border: '2px solid var(--kc-black)' },
+    fog:   { background: 'var(--kc-fog)',   color: 'var(--kc-black)', border: '2px solid var(--kc-black)' },
+  }[tone];
+  return (
+    <span style={{
+      ...styles,
+      fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 11,
+      letterSpacing: '.16em', textTransform: 'uppercase',
+      padding: '6px 10px', display: 'inline-flex', alignItems: 'center', gap: 8, lineHeight: 1,
+    }}>{children}</span>
+  );
+};
+
+const Section = ({ children, dark, padded = true, style }) => (
+  <section style={{
+    background: dark ? 'var(--kc-black)' : 'var(--kc-bone)',
+    color: dark ? 'var(--fg-inverse)' : 'var(--fg1)',
+    padding: padded ? '64px 48px' : 0,
+    ...style,
+  }}>{children}</section>
+);
+
+// Photo placeholder — flat grey rectangle with a label inside.
+// Tells the user/AI exactly what photo we expect there.
+const PhotoSlot = ({ label, ratio = '4 / 3', style }) => (
+  <div style={{
+    background: 'var(--kc-fog)',
+    aspectRatio: ratio,
+    border: '2px solid var(--kc-black)',
+    display: 'flex', alignItems: 'flex-end', padding: 14,
+    backgroundImage: 'repeating-linear-gradient(45deg, transparent 0 12px, rgba(10,10,10,.05) 12px 14px)',
+    ...style,
+  }}>
+    <span style={{
+      fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.12em',
+      textTransform: 'uppercase', color: 'var(--kc-black)',
+      background: 'var(--kc-bone)', padding: '4px 8px',
+      border: '2px solid var(--kc-black)',
+    }}>NUOTRAUKA · {label}</span>
+  </div>
+);
+
+// Real photo. Monochrome treatment to match the brand: greyscale, lifted blacks,
+// hairline border, optional caption tab. Use anywhere PhotoSlot was a placeholder.
+const Photo = ({ src, alt = '', ratio = '4 / 3', caption, style, treatment = 'mono', objectPosition = '50% 50%' }) => {
+  const filter = treatment === 'mono'
+    ? 'grayscale(1) contrast(1.05) brightness(0.98)'
+    : treatment === 'duotone'
+    ? 'grayscale(1) contrast(1.1) brightness(0.92)'
+    : 'none';
+  return (
+    <div style={{
+      position: 'relative', aspectRatio: ratio,
+      border: '2px solid var(--kc-black)',
+      background: 'var(--kc-black)',
+      overflow: 'hidden',
+      ...style,
+    }}>
+      <img src={src} alt={alt} style={{
+        width: '100%', height: '100%', objectFit: 'cover',
+        objectPosition, display: 'block', filter,
+      }}/>
+      {caption && (
+        <span style={{
+          position: 'absolute', left: 14, bottom: 14,
+          fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '.12em',
+          textTransform: 'uppercase', color: 'var(--kc-black)',
+          background: 'var(--kc-bone)', padding: '4px 8px',
+          border: '2px solid var(--kc-black)',
+        }}>{caption}</span>
+      )}
+    </div>
+  );
+};
+
+Object.assign(window, { Eyebrow, Rule, Button, Badge, Section, PhotoSlot, Photo, LT });
