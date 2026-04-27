@@ -3,23 +3,20 @@ import { Eyebrow, Rule, Section, Photo } from './Bits';
 export default function Coach() {
   return (
     <Section padded={false}>
-      <div style={{
-        padding: '64px 48px',
-        display: 'grid', gridTemplateColumns: '1fr 1.2fr',
-        gap: 48, alignItems: 'flex-start',
-      }}>
+      <div className="page-pad coach-page-grid">
         <Photo
           src="/photos/coach-with-kid.jpeg"
           alt="Treneris Lukas Spalvis treniruotėje su akademijos žaidėju"
           ratio="3 / 4"
-          style={{ minHeight: 540 }}
+          style={{ minHeight: 320 }}
           objectPosition="50% 5%"
           caption="Akademija · treniruotė"
         />
         <div>
           <Eyebrow>Vyriausiasis treneris · Akademija + III lyga</Eyebrow>
           <h1 style={{
-            fontFamily: 'var(--font-display)', fontSize: 'clamp(72px, 8vw, 120px)',
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(56px, 8vw, 120px)',
             lineHeight: .88, margin: '12px 0',
             textTransform: 'uppercase', letterSpacing: '-.01em',
           }}>
@@ -27,8 +24,8 @@ export default function Coach() {
           </h1>
           <Rule width={120} weight={8} />
           <p style={{
-            marginTop: 24, fontSize: 19, color: 'var(--fg1)',
-            lineHeight: 1.5, maxWidth: 520,
+            marginTop: 24, fontSize: 'clamp(16px, 2vw, 19px)',
+            color: 'var(--fg1)', lineHeight: 1.5, maxWidth: 520,
           }}>
             Lietuvos metų futbolininkas 2015 m. Lietuvos nacionalinės rinktinės narys. Danijos „Superligos" čempionas ir geriausias lygos žaidėjas.
           </p>

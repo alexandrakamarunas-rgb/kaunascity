@@ -61,3 +61,110 @@ p { margin: 0; }
 h1, h2, h3, h4 { margin: 0; }
 
 ::selection { background: var(--kc-black); color: var(--kc-bone); }
+
+/* =============================================
+   RESPONSIVE LAYOUT UTILITIES
+   ============================================= */
+
+/* Section padding */
+.sec-pad    { padding: 64px 48px; }
+.page-pad   { padding: 64px 48px; }
+.hero-pad   { padding: 72px 48px 80px; }
+.coach-pad  { padding: 64px 48px; }
+
+/* Grids */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.coach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+}
+.coach-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+.fixture-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 220px;
+  gap: 24px;
+  align-items: center;
+}
+.group-card-inner {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.age-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.academy-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 16px;
+}
+
+/* =============================================
+   MOBILE (max 768px)
+   ============================================= */
+@media (max-width: 768px) {
+  .sec-pad   { padding: 40px 20px; }
+  .page-pad  { padding: 36px 20px; }
+  .hero-pad  { padding: 36px 20px 44px; }
+  .coach-pad { padding: 36px 20px; }
+
+  .hero-grid         { grid-template-columns: 1fr; gap: 28px; }
+  .two-col           { grid-template-columns: 1fr; gap: 16px; }
+  .coach-grid        { grid-template-columns: 1fr; gap: 28px; }
+  .coach-page-grid   { grid-template-columns: 1fr; gap: 28px; }
+  .footer-grid       { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .group-card-inner  { grid-template-columns: 1fr; gap: 12px; }
+  .form-grid         { grid-template-columns: 1fr; gap: 16px; }
+  .age-cards         { grid-template-columns: 1fr; gap: 10px; }
+  .academy-header    { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .pricing-grid      { grid-template-columns: 1fr; gap: 20px; }
+
+  .fixture-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .fixture-row .fixture-meta { text-align: left; }
+
+  /* hide hero photo on very small screens to save space */
+  .hero-photo-wrap { display: none; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
