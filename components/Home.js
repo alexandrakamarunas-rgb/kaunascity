@@ -60,11 +60,11 @@ export default function Home() {
         fontSize: 'clamp(18px, 4vw, 28px)',
         textTransform: 'uppercase', letterSpacing: '-.01em',
       }}>
-        <span style={{ marginLeft: 20 }}>5–12 metų</span>
+        <span style={{ marginLeft: 20 }}>5–12 <LT>metų</LT></span>
         <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span>2 grupės</span>
+        <span><LT>2 grupės</LT></span>
         <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
-        <span>3 treniruotės / sav.</span>
+        <span><LT>3 treniruotės / sav.</LT></span>
         <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
         <span>III lyga</span>
         <span style={{ margin: '0 20px', color: 'var(--fg3)' }}>●</span>
@@ -114,7 +114,7 @@ export default function Home() {
         background: 'var(--kc-paper)',
         borderTop: '2px solid var(--kc-black)', borderBottom: '2px solid var(--kc-black)',
       }}>
-        <div className="coach-pad coach-grid">
+        <div className="page-pad coach-grid">
           <Photo
             src="/photos/coach-with-kid.jpeg"
             alt="Treneris Lukas Spalvis su akademijos žaidėju"

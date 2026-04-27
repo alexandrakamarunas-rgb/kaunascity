@@ -88,7 +88,7 @@ export const Section = ({ children, dark, padded = true, style }) => (
   <section style={{
     background: dark ? 'var(--kc-black)' : 'var(--kc-bone)',
     color: dark ? 'var(--fg-inverse)' : 'var(--fg1)',
-    padding: padded ? '64px 48px' : 0,
+    padding: padded ? 'var(--kc-pad-y) var(--kc-pad-x)' : 0,
     ...style,
   }}>{children}</section>
 );

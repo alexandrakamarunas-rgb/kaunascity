@@ -10,6 +10,46 @@
   font-display: swap;
 }
 
+/* =============================================
+   RESPONSIVE SPACING TOKENS
+   These change at breakpoints and are used via
+   var() in inline styles — so Section, divs,
+   all respond without fighting specificity.
+   ============================================= */
+:root {
+  --kc-pad-x:   48px;
+  --kc-pad-y:   64px;
+  --kc-hero-pt: 72px;
+  --kc-hero-pb: 80px;
+}
+@media (max-width: 900px) {
+  :root {
+    --kc-pad-x:   32px;
+    --kc-pad-y:   48px;
+    --kc-hero-pt: 48px;
+    --kc-hero-pb: 56px;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --kc-pad-x:   20px;
+    --kc-pad-y:   40px;
+    --kc-hero-pt: 36px;
+    --kc-hero-pb: 44px;
+  }
+}
+@media (max-width: 400px) {
+  :root {
+    --kc-pad-x:   16px;
+    --kc-pad-y:   32px;
+    --kc-hero-pt: 28px;
+    --kc-hero-pb: 36px;
+  }
+}
+
+/* =============================================
+   DESIGN TOKENS
+   ============================================= */
 :root {
   --kc-black:        #0A0A0A;
   --kc-bone:         #F4F1EA;
@@ -44,6 +84,9 @@
   --ease-snap: cubic-bezier(.2, .8, .2, 1);
 }
 
+/* =============================================
+   BASE
+   ============================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
@@ -53,8 +96,10 @@ html, body {
   color: var(--fg1);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
+img { max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
 p { margin: 0; }
@@ -63,16 +108,14 @@ h1, h2, h3, h4 { margin: 0; }
 ::selection { background: var(--kc-black); color: var(--kc-bone); }
 
 /* =============================================
-   RESPONSIVE LAYOUT UTILITIES
+   LAYOUT GRIDS
    ============================================= */
 
-/* Section padding */
-.sec-pad    { padding: 64px 48px; }
-.page-pad   { padding: 64px 48px; }
-.hero-pad   { padding: 72px 48px 80px; }
-.coach-pad  { padding: 64px 48px; }
+/* Padding helpers that use responsive CSS vars */
+.page-pad  { padding: var(--kc-pad-y) var(--kc-pad-x); }
+.hero-pad  { padding: var(--kc-hero-pt) var(--kc-pad-x) var(--kc-hero-pb); }
 
-/* Grids */
+/* Two-column grids → single column on mobile */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -101,17 +144,23 @@ h1, h2, h3, h4 { margin: 0; }
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 32px;
 }
+
+/* Fixture table */
 .fixture-row {
   display: grid;
-  grid-template-columns: 160px 1fr 220px;
-  gap: 24px;
+  grid-template-columns: 160px 1fr 200px;
+  gap: 20px;
   align-items: center;
 }
+
+/* Academy group cards */
 .group-card-inner {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 140px 1fr;
   gap: 20px;
 }
+
+/* Form */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -122,12 +171,18 @@ h1, h2, h3, h4 { margin: 0; }
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-.academy-header {
+
+/* Page heading row (title + eyebrow) */
+.page-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 20px;
 }
+
+/* Pricing */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -136,35 +191,54 @@ h1, h2, h3, h4 { margin: 0; }
 }
 
 /* =============================================
-   MOBILE (max 768px)
+   TABLET  (≤ 900px)
    ============================================= */
-@media (max-width: 768px) {
-  .sec-pad   { padding: 40px 20px; }
-  .page-pad  { padding: 36px 20px; }
-  .hero-pad  { padding: 36px 20px 44px; }
-  .coach-pad { padding: 36px 20px; }
+@media (max-width: 900px) {
+  .hero-grid { gap: 32px; }
+  .fixture-row { grid-template-columns: 130px 1fr 160px; gap: 14px; }
+}
 
-  .hero-grid         { grid-template-columns: 1fr; gap: 28px; }
-  .two-col           { grid-template-columns: 1fr; gap: 16px; }
-  .coach-grid        { grid-template-columns: 1fr; gap: 28px; }
-  .coach-page-grid   { grid-template-columns: 1fr; gap: 28px; }
-  .footer-grid       { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .group-card-inner  { grid-template-columns: 1fr; gap: 12px; }
-  .form-grid         { grid-template-columns: 1fr; gap: 16px; }
-  .age-cards         { grid-template-columns: 1fr; gap: 10px; }
-  .academy-header    { flex-direction: column; gap: 10px; align-items: flex-start; }
-  .pricing-grid      { grid-template-columns: 1fr; gap: 20px; }
+/* =============================================
+   MOBILE  (≤ 640px)
+   ============================================= */
+@media (max-width: 640px) {
+  .hero-grid        { grid-template-columns: 1fr; gap: 24px; }
+  .hero-photo-wrap  { display: none; }
+
+  .two-col          { grid-template-columns: 1fr; gap: 16px; }
+  .coach-grid       { grid-template-columns: 1fr; gap: 24px; }
+  .coach-page-grid  { grid-template-columns: 1fr; gap: 24px; }
+  .footer-grid      { grid-template-columns: 1fr 1fr; gap: 24px; }
 
   .fixture-row {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
   }
-  .fixture-row .fixture-meta { text-align: left; }
+  .fixture-meta { text-align: left !important; }
 
-  /* hide hero photo on very small screens to save space */
-  .hero-photo-wrap { display: none; }
+  .group-card-inner { grid-template-columns: 1fr; gap: 12px; }
+  .form-grid        { grid-template-columns: 1fr; gap: 16px; }
+  .age-cards        { grid-template-columns: 1fr; gap: 10px; }
+  .pricing-grid     { grid-template-columns: 1fr; gap: 20px; }
+
+  .page-heading { flex-direction: column; align-items: flex-start; }
 }
 
-@media (max-width: 480px) {
+/* =============================================
+   SMALL MOBILE  (≤ 400px)
+   ============================================= */
+@media (max-width: 400px) {
   .footer-grid { grid-template-columns: 1fr; }
+  .two-col     { gap: 12px; }
+}
+
+/* =============================================
+   DESKTOP NAV / HAMBURGER VISIBILITY
+   ============================================= */
+.desktop-nav { display: flex; }
+.hamburger   { display: none !important; }
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .hamburger   { display: flex !important; }
 }
