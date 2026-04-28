@@ -11,7 +11,6 @@ const PartnerLogos = () => (
       <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 32px' }}>
         <span style={{
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          background: '#fff', border: '1.5px solid rgba(10,10,10,0.12)',
           padding: '10px 16px', width: 120, height: 60,
         }}>
           <img src={src} alt="" style={{ maxHeight: 40, maxWidth: 88, width: 'auto', height: 'auto', display: 'block' }} />
@@ -136,7 +135,7 @@ export default function Home() {
 
       {/* PARTNERS TICKER */}
       <div style={{
-        background: 'var(--kc-paper)',
+        background: 'var(--kc-bone)',
         borderTop: '2px solid var(--kc-black)',
         borderBottom: '2px solid var(--kc-black)',
         padding: '20px 0', overflow: 'hidden',
