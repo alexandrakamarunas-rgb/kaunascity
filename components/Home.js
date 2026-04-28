@@ -8,11 +8,13 @@ const partners = [1, 2, 3, 4, 5, 6, 7, 8];
 const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
     {partners.map(n => (
-      <span key={n} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 48px' }}>
+      <span key={n} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 56px' }}>
         <img
           src={`/partners/partner-${n}.png`}
           alt=""
-          style={{ height: 40, width: 'auto', objectFit: 'contain', filter: 'grayscale(1)', opacity: .7 }}
+          height={56}
+          width={56}
+          style={{ height: 56, width: 56, objectFit: 'contain' }}
         />
       </span>
     ))}
