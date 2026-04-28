@@ -5,13 +5,17 @@ import partnerLogos from './partnerLogos';
 
 const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</span>;
 
-const partnerNames = ['Doporro', 'S77', 'Intus', 'oho!', 'Biodex', 'FBall', '7Kick', 'Mamma Pizza'];
 const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
     {partnerLogos.map((src, i) => (
-      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 40px' }}>
-        <img src={src} alt={partnerNames[i]} title={partnerNames[i]}
-          style={{ height: 48, width: 'auto', maxWidth: 120, display: 'block', background: '#eee' }} />
+      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 32px' }}>
+        <span style={{
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          background: '#fff', border: '1.5px solid rgba(10,10,10,0.12)',
+          padding: '10px 16px', width: 120, height: 60,
+        }}>
+          <img src={src} alt="" style={{ maxHeight: 40, maxWidth: 88, width: 'auto', height: 'auto', display: 'block' }} />
+        </span>
       </span>
     ))}
   </span>
