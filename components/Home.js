@@ -9,7 +9,7 @@ const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
     {partnerLogos.map((src, i) => (
       <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 40px' }}>
-        <img src={src} alt="" style={{ height: 64, width: 'auto', maxWidth: 140, display: 'block' }} />
+        <img src={src} alt="" style={{ height: 80, width: 'auto', maxWidth: 160, display: 'block' }} />
       </span>
     ))}
   </span>
@@ -138,7 +138,7 @@ export default function Home() {
         <div style={{
           fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 10,
           letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--fg3)',
-          textAlign: 'center', marginBottom: 16,
+          textAlign: 'center', marginBottom: 8,
         }}>Partneriai</div>
         <div className="marquee-track" aria-hidden="true">
           <PartnerLogos /><PartnerLogos /><PartnerLogos />
