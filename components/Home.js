@@ -1,21 +1,15 @@
 'use client';
 import Link from 'next/link';
 import { Eyebrow, Rule, Button, Section, Photo, LT } from './Bits';
+import partnerLogos from './partnerLogos';
 
 const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</span>;
 
-const partners = [1, 2, 3, 4, 5, 6, 7, 8];
 const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
-    {partners.map(n => (
-      <span key={n} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 56px' }}>
-        <img
-          src={`/partners/partner-${n}.png`}
-          alt=""
-          height={56}
-          width={56}
-          style={{ height: 56, width: 56, objectFit: 'contain' }}
-        />
+    {partnerLogos.map((src, i) => (
+      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 56px' }}>
+        <img src={src} alt="" style={{ height: 56, width: 56, objectFit: 'contain' }} />
       </span>
     ))}
   </span>
