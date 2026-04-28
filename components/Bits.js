@@ -26,7 +26,7 @@ export const Eyebrow = ({ children, inverse }) => (
 export const Rule = ({ width = 64, weight = 4, inverse }) => (
   <div style={{
     height: weight, width, background: inverse ? 'var(--kc-bone)' : 'var(--kc-black)',
-    flexShrink: 0,
+    flexShrink: 0, marginTop: 16, marginBottom: 4,
   }} />
 );
 

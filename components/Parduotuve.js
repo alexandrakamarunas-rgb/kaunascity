@@ -233,7 +233,10 @@ export default function Parduotuve() {
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(52px, 8vw, 96px)',
             margin: 0, lineHeight: .95, textTransform: 'uppercase',
-          }}>Parduotuvė</h1>
+          }}>Parduotuv<span style={{ position: 'relative', display: 'inline-block' }}>e<span aria-hidden="true" style={{
+            position: 'absolute', left: 0, right: 0, top: '-0.42em',
+            textAlign: 'center', fontSize: '0.28em', lineHeight: 1, display: 'block',
+          }}>•</span></span></h1>
           <Eyebrow>Kaunas City · Oficiali atributika</Eyebrow>
         </div>
         <Rule width={120} weight={8} />

@@ -56,7 +56,7 @@ export default function Home() {
               </Link>
               <Link href="/akademija">
                 <Button variant="ghost" size="lg">
-                  <span style={{ color: 'var(--kc-bone)' }}>Apie akademija</span>
+                  <span style={{ color: 'var(--kc-bone)' }}>Apie akademiją</span>
                 </Button>
               </Link>
             </div>
@@ -102,7 +102,7 @@ export default function Home() {
             {
               eb: 'Suaugusiems', title: 'Komanda', sub: 'III lyga',
               body: 'KAFF–MAFF III lyga.',
-              cta: 'Apie komanda →', href: '/komanda',
+              cta: 'Apie komandą →', href: '/komanda',
             },
           ].map((c, i) => (
             <Link key={i} href={c.href} style={{
