@@ -8,13 +8,8 @@ const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</s
 const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
     {partnerLogos.map((src, i) => (
-      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 32px' }}>
-        <span style={{
-          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          padding: '10px 16px', width: 120, height: 60,
-        }}>
-          <img src={src} alt="" style={{ maxHeight: 40, maxWidth: 88, width: 'auto', height: 'auto', display: 'block' }} />
-        </span>
+      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 40px' }}>
+        <img src={src} alt="" style={{ height: 64, width: 'auto', maxWidth: 140, display: 'block' }} />
       </span>
     ))}
   </span>
