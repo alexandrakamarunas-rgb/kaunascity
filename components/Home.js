@@ -21,7 +21,7 @@ const MarqueeItems = () => (
     <Sep /><span><LT>2 grupės</LT></span>
     <Sep /><span><LT>3 treniruotės / sav.</LT></span>
     <Sep /><span>III lyga</span>
-    <Sep /><span>Lapiu stadionas</span>
+    <Sep /><span><LT>Lapių stadionas</LT></span>
     <Sep />
   </span>
 );
@@ -101,7 +101,7 @@ export default function Home() {
             },
             {
               eb: 'Suaugusiems', title: 'Komanda', sub: 'III lyga',
-              body: 'Iškovojome KMFL 7×7 čempionų titulą, dabar žaidžiame KAFF–MAFF III lygoje.',
+              body: 'KAFF–MAFF III lyga.',
               cta: 'Apie komanda →', href: '/komanda',
             },
           ].map((c, i) => (

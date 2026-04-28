@@ -9,16 +9,17 @@ const linkStyle = {
 
 const sections = [
   ['Akademija', [
-    { label: 'Apie akademija', href: '/akademija' },
+    { label: 'Apie akademiją', href: '/akademija' },
     { label: 'Registracija',   href: '/registracija' },
+    { label: '1,2% Parama',    href: '/parama' },
   ]],
   ['Komanda', [
-    { label: 'Apie komanda', href: '/komanda' },
+    { label: 'Apie komandą', href: '/komanda' },
     { label: 'Treneris',     href: '/treneris' },
   ]],
   ['Kontaktai', [
     { label: 'info@kaunascityfa.lt', href: 'mailto:info@kaunascityfa.lt' },
-    { label: 'Lapiu mokyklos stadionas', href: 'https://maps.google.com/?q=Lapių+mokyklos+stadionas,+Lapiai,+Lietuva' },
+    { label: 'Lapių mokyklos stadionas', href: 'https://maps.google.com/?q=Lapių+mokyklos+stadionas,+Lapiai,+Lietuva' },
   ]],
 ];
 
