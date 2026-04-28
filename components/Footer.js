@@ -9,9 +9,10 @@ const linkStyle = {
 
 const sections = [
   ['Akademija', [
-    { label: 'Apie akademiją', href: '/akademija' },
-    { label: 'Registracija',   href: '/registracija' },
-    { label: '1,2% Parama',    href: '/parama' },
+    { label: 'Apie akademiją',  href: '/akademija' },
+    { label: 'Registracija',    href: '/registracija' },
+    { label: '1,2% Parama',     href: '/parama' },
+    { label: 'Parduotuvė',      href: '/parduotuve' },
   ]],
   ['Komanda', [
     { label: 'Apie komandą', href: '/komanda' },
