@@ -4,7 +4,7 @@ import { Eyebrow, Rule, Button, Section, Photo, LT } from './Bits';
 
 const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</span>;
 
-const partners = [1, 2, 3, 4, 5];
+const partners = [1, 2, 3, 4, 5, 6, 7, 8];
 const PartnerLogos = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
     {partners.map(n => (
