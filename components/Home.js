@@ -4,6 +4,21 @@ import { Eyebrow, Rule, Button, Section, Photo, LT } from './Bits';
 
 const Sep = () => <span style={{ margin: '0 24px', color: 'var(--fg3)' }}>●</span>;
 
+const partners = [1, 2, 3, 4, 5];
+const PartnerLogos = () => (
+  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
+    {partners.map(n => (
+      <span key={n} style={{ display: 'inline-flex', alignItems: 'center', padding: '0 48px' }}>
+        <img
+          src={`/partners/partner-${n}.png`}
+          alt=""
+          style={{ height: 40, width: 'auto', objectFit: 'contain', filter: 'grayscale(1)', opacity: .7 }}
+        />
+      </span>
+    ))}
+  </span>
+);
+
 const MarqueeItems = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', paddingRight: 24 }}>
     <span>5–12 <LT>metų</LT></span>
@@ -116,6 +131,23 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
+      {/* PARTNERS TICKER */}
+      <div style={{
+        background: 'var(--kc-paper)',
+        borderTop: '2px solid var(--kc-black)',
+        borderBottom: '2px solid var(--kc-black)',
+        padding: '20px 0', overflow: 'hidden',
+      }}>
+        <div style={{
+          fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 10,
+          letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--fg3)',
+          textAlign: 'center', marginBottom: 16,
+        }}>Partneriai</div>
+        <div className="marquee-track" aria-hidden="true">
+          <PartnerLogos /><PartnerLogos /><PartnerLogos />
+        </div>
+      </div>
 
       {/* COACH STRIP */}
       <Section padded={false} style={{
