@@ -128,7 +128,7 @@ export default function Elite() {
               <div style={{ ...labelStyle, color: 'rgba(244,241,234,0.55)', marginBottom: 16 }}>
                 Šiuo metu prie projekto prisijungė
               </div>
-              {['Kaunas City FA', 'Kauno futbolo akademija „Tauras"', 'Futbolo akademija „Ainiai"', 'Futbolo akademija „Core11"'].map((a, i) => (
+              {['Kaunas City FA', 'Kauno futbolo akademija „Tauras"', 'Futbolo akademija „Ainiai"', 'FK Girionys'].map((a, i) => (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'center', gap: 16,
                   padding: '10px 0',
