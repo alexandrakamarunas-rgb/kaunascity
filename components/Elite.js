@@ -85,13 +85,16 @@ export default function Elite() {
       <div className="page-pad">
 
         {/* HEADER */}
-        <div className="academy-header">
-          <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(52px, 8vw, 96px)',
-            margin: 0, lineHeight: .92, textTransform: 'uppercase',
-          }}>Kaunas City<br />Elite</h1>
-          <Eyebrow>Elitinio lygio futbolo projektas</Eyebrow>
+        <div className="academy-header" style={{ paddingTop: 'clamp(24px, 4vw, 40px)' }}>
+          <img
+            src="/photos/elite-header-logo.png"
+            alt="Kaunas City Elite"
+            style={{
+              height: 'clamp(40px, 7vw, 80px)',
+              width: 'auto', display: 'block',
+            }}
+          />
+          <Eyebrow style={{ marginTop: 12 }}>Elitinio lygio futbolo projektas</Eyebrow>
         </div>
         <Rule width={120} weight={8} />
 
