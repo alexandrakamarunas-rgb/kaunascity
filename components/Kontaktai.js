@@ -11,7 +11,7 @@ const contacts = [
   },
   {
     role: 'Klubo prezidentas',
-    name: 'Zenonas Kamarūnas',
+    name: 'Zenonas Kamarunas',
     photo: '/photos/contact-zenonas.jpg',
     objectPosition: 'center top',
     phone: '+370 (660) 90 000',
@@ -149,7 +149,7 @@ export default function Kontaktai() {
               fontFamily: 'var(--font-mono)', fontSize: 14,
               letterSpacing: '.04em', color: 'rgba(244,241,234,0.75)',
               lineHeight: 1.6,
-            }}>Lapių mokyklos stadionas<br />Lapiai, Kaunas r.</div>
+            }}>Lapių mokyklos stadionas</div>
           </div>
         </div>
 
