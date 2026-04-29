@@ -17,6 +17,7 @@ const sections = [
   ['Komanda', [
     { label: 'Apie komandą', href: '/komanda' },
     { label: 'Treneris',     href: '/treneris' },
+    { label: 'Elite',        href: '/elite' },
   ]],
   ['Kontaktai', [
     { label: 'info@kaunascityfa.lt', href: 'mailto:info@kaunascityfa.lt' },

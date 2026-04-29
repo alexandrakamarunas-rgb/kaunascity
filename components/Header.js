@@ -9,6 +9,7 @@ const tabs = [
   ['/akademija', 'Akademija'],
   ['/komanda', 'Komanda'],
   ['/treneris', 'Treneris'],
+  ['/elite', 'Elite'],
   ['/parama', '1,2%'],
   ['/parduotuve', 'Parduotuvė'],
   ['/registracija', 'Registracija'],
