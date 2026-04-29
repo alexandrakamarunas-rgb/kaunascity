@@ -250,6 +250,10 @@ h1, h2, h3, h4 { margin: 0; }
   .shop-grid        { grid-template-columns: 1fr; gap: 20px; }
   .elite-leaders-grid { grid-template-columns: 1fr; gap: 20px; }
 
+  .contact-card { grid-template-columns: 1fr !important; }
+  .contact-photo { min-height: 200px !important; border-right: none !important; border-bottom: 2px solid var(--kc-black); }
+  .contact-general { grid-template-columns: 1fr !important; gap: 20px !important; }
+
   .page-heading { flex-direction: column; align-items: flex-start; }
 }
 

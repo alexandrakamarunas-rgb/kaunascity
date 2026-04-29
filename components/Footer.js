@@ -20,6 +20,7 @@ const sections = [
     { label: 'Elite',        href: '/elite' },
   ]],
   ['Kontaktai', [
+    { label: 'Kontaktai', href: '/kontaktai' },
     { label: 'info@kaunascityfa.lt', href: 'mailto:info@kaunascityfa.lt' },
     { label: 'Lapių mokyklos stadionas', href: 'https://maps.google.com/?q=Lapių+mokyklos+stadionas,+Lapiai,+Lietuva' },
   ]],
