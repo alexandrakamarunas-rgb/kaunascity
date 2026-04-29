@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Eyebrow, Rule, Section, Button, Photo } from './Bits';
 import elitePartnerLogos from './elitePartnerLogos';
 
-const elitePartnerNames = ['ThreeKick', 'FBall Agency', 'Kaunas City Cup', 'Kaunas Football Fest'];
+const elitePartnerNames = ['FBall Agency', '7Kick', 'Kaunas City Cup', 'Kaunas City Cup'];
 
 const labelStyle = {
   fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
@@ -90,8 +90,8 @@ export default function Elite() {
             src="/photos/elite-header-logo.png"
             alt="Kaunas City Elite"
             style={{
-              height: 'clamp(40px, 7vw, 80px)',
-              width: 'auto', display: 'block',
+              width: 'clamp(240px, 40vw, 480px)',
+              height: 'auto', display: 'block',
             }}
           />
           <Eyebrow style={{ marginTop: 12 }}>Elitinio lygio futbolo projektas</Eyebrow>
@@ -236,9 +236,10 @@ export default function Elite() {
               }}>
                 <div style={{ ...labelStyle }}>{c.label}</div>
                 <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(22px, 3vw, 32px)',
-                  margin: 0, lineHeight: 1.1, textTransform: 'uppercase',
+                  fontFamily: 'var(--font-headline)', fontWeight: 700,
+                  fontSize: 'clamp(18px, 2.5vw, 26px)',
+                  margin: 0, lineHeight: 1.2, textTransform: 'uppercase',
+                  letterSpacing: '.04em',
                 }}>{c.body}</p>
               </div>
             ))}
@@ -281,7 +282,7 @@ export default function Elite() {
               fontSize: 'clamp(32px, 5vw, 56px)',
               margin: '12px 0 0', lineHeight: .95, textTransform: 'uppercase',
             }}>
-              Durys atviros —<br />vieta tik geriausiems
+              Durys atviros
             </h2>
             <Rule width={96} weight={8} />
             <p style={{
