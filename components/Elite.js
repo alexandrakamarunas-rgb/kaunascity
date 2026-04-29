@@ -43,20 +43,20 @@ function BulletList({ items }) {
   );
 }
 
-function PersonCard({ name, title, subtitle, photo, alt }) {
+function PersonCard({ name, title, subtitle, photo, alt, objectPosition = 'center top' }) {
   return (
     <div style={{
       background: 'var(--kc-paper)', border: '2px solid var(--kc-black)',
       display: 'flex', flexDirection: 'column',
     }}>
-      <div style={{ background: '#e8e5df', borderBottom: '2px solid var(--kc-black)', aspectRatio: '4 / 3', overflow: 'hidden' }}>
+      <div style={{ background: '#e8e5df', borderBottom: '2px solid var(--kc-black)', aspectRatio: '3 / 4', overflow: 'hidden' }}>
         <img
           src={photo}
           alt={alt || name}
           style={{
             width: '100%', height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center top',
+            objectPosition,
             filter: 'grayscale(1) contrast(1.05) brightness(0.98)',
             display: 'block',
           }}
@@ -85,16 +85,16 @@ export default function Elite() {
       <div className="page-pad">
 
         {/* HEADER */}
-        <div className="academy-header" style={{ paddingTop: 'clamp(24px, 4vw, 40px)' }}>
+        <div className="academy-header">
           <img
             src="/photos/elite-header-logo.png"
             alt="Kaunas City Elite"
             style={{
-              width: 'clamp(240px, 40vw, 480px)',
-              height: 'auto', display: 'block',
+              height: 'clamp(36px, 5vw, 64px)',
+              width: 'auto', display: 'block',
             }}
           />
-          <Eyebrow style={{ marginTop: 12 }}>Elitinio lygio futbolo projektas</Eyebrow>
+          <Eyebrow style={{ marginTop: 8 }}>Elitinio lygio futbolo projektas</Eyebrow>
         </div>
         <Rule width={120} weight={8} />
 
@@ -170,6 +170,7 @@ export default function Elite() {
               subtitle="Vienas didžiausių futbolo turnyrų organizatorių Lietuvoje. Rūpinasi komandų dalyvavimu turnyruose ir žaidėjų vystymu per aukšto lygio varžybas."
               photo="/photos/elite-aurinas.jpg"
               alt="Aurinas Ivaškevičius"
+              objectPosition="center 5%"
             />
           </div>
         </SectionBlock>
