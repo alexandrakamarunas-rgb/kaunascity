@@ -49,7 +49,7 @@ function PersonCard({ name, title, subtitle, photo, alt, objectPosition = 'cente
       background: 'var(--kc-paper)', border: '2px solid var(--kc-black)',
       display: 'flex', flexDirection: 'column',
     }}>
-      <div style={{ background: '#e8e5df', borderBottom: '2px solid var(--kc-black)', aspectRatio: '3 / 4', overflow: 'hidden' }}>
+      <div style={{ background: '#e8e5df', borderBottom: '2px solid var(--kc-black)', aspectRatio: '1 / 1', overflow: 'hidden' }}>
         <img
           src={photo}
           alt={alt || name}
@@ -62,16 +62,16 @@ function PersonCard({ name, title, subtitle, photo, alt, objectPosition = 'cente
           }}
         />
       </div>
-      <div style={{ padding: '20px 20px 24px', flex: 1 }}>
-        <div style={{ ...labelStyle, marginBottom: 4 }}>{title}</div>
+      <div style={{ padding: '14px 16px 18px', flex: 1 }}>
+        <div style={{ ...labelStyle, fontSize: 10, marginBottom: 4 }}>{title}</div>
         <h3 style={{
-          fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3vw, 36px)',
-          margin: '8px 0 10px', lineHeight: 1, textTransform: 'uppercase',
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(16px, 1.8vw, 22px)',
+          margin: '6px 0 8px', lineHeight: 1, textTransform: 'uppercase',
         }}>{name}</h3>
         {subtitle && (
           <p style={{
-            fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg2)',
-            lineHeight: 1.6, margin: 0,
+            fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--fg2)',
+            lineHeight: 1.5, margin: 0,
           }}>{subtitle}</p>
         )}
       </div>
@@ -153,24 +153,40 @@ export default function Elite() {
             <PersonCard
               name="Laimis Bičkauskas"
               title="Projekto vadovas"
-              subtitle="UEFA Pro licencija, daugiau nei du dešimtmečiai patirties jaunimo ugdyme. Asmeniškai prižiūri treniruočių procesą ir žaidėjų tobulėjimą."
+              subtitle="UEFA Pro licencija, daugiau nei du dešimtmečiai patirties jaunimo ugdyme."
               photo="/photos/elite-laimis.jpg"
               alt="Laimis Bičkauskas"
             />
             <PersonCard
               name="Lukas Spalvis"
               title="Projekto ambasadorius"
-              subtitle="Lietuvos metų futbolininkas (2015), Kaunas City įkūrėjas. Dalinasi profesionalo keliu, psichologiniais iššūkiais ir gyvenimu už aikštės ribų."
+              subtitle="Lietuvos metų futbolininkas (2015), Kaunas City įkūrėjas."
               photo="/photos/elite-lukas.jpg"
               alt="Lukas Spalvis"
             />
             <PersonCard
               name="Aurinas Ivaškevičius"
               title="Tarptautinė patirtis"
-              subtitle="Vienas didžiausių futbolo turnyrų organizatorių Lietuvoje. Rūpinasi komandų dalyvavimu turnyruose ir žaidėjų vystymu per aukšto lygio varžybas."
+              subtitle="Futbolo turnyrų organizatorius. Aukšto lygio varžybinė patirtis."
               photo="/photos/elite-aurinas.jpg"
               alt="Aurinas Ivaškevičius"
-              objectPosition="center 5%"
+              objectPosition="center 15%"
+            />
+            <PersonCard
+              name="Skirmantas Šestavickas"
+              title="Partnerystės ir komercijos vadovas"
+              subtitle=""
+              photo="/photos/elite-skirmantas.jpg"
+              alt="Skirmantas Šestavickas"
+              objectPosition="center 25%"
+            />
+            <PersonCard
+              name="Saulius Bakšaitis"
+              title="Treneris"
+              subtitle=""
+              photo="/photos/elite-saulius.jpg"
+              alt="Saulius Bakšaitis"
+              objectPosition="center 20%"
             />
           </div>
         </SectionBlock>
@@ -206,7 +222,7 @@ export default function Elite() {
             background: 'var(--kc-black)', color: 'var(--kc-bone)',
             padding: 'clamp(28px, 5vw, 48px)',
           }}>
-            <Eyebrow inverse>Vizija</Eyebrow>
+            <Eyebrow inverse>Siekiamybė · Per 2–3 metus</Eyebrow>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(32px, 5vw, 60px)',

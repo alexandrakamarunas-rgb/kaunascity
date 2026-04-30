@@ -213,8 +213,8 @@ h1, h2, h3, h4 { margin: 0; }
 /* Elite leaders */
 .elite-leaders-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
 }
 
 /* =============================================
@@ -248,7 +248,7 @@ h1, h2, h3, h4 { margin: 0; }
   .age-cards        { grid-template-columns: 1fr; gap: 10px; }
   .pricing-grid     { grid-template-columns: 1fr; gap: 20px; }
   .shop-grid        { grid-template-columns: 1fr; gap: 20px; }
-  .elite-leaders-grid { grid-template-columns: 1fr; gap: 20px; }
+  .elite-leaders-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
   .contact-card { grid-template-columns: 1fr !important; }
   .contact-photo { min-height: 200px !important; border-right: none !important; border-bottom: 2px solid var(--kc-black); }
