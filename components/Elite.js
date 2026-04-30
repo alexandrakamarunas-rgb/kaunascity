@@ -170,7 +170,7 @@ export default function Elite() {
               subtitle="Futbolo turnyrų organizatorius. Aukšto lygio varžybinė patirtis."
               photo="/photos/elite-aurinas.jpg"
               alt="Aurinas Ivaškevičius"
-              objectPosition="center 20%"
+              objectPosition="center 35%"
             />
             <PersonCard
               name="Skirmantas Šestavickas"
