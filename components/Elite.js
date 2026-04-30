@@ -170,7 +170,7 @@ export default function Elite() {
               subtitle="Futbolo turnyrų organizatorius. Aukšto lygio varžybinė patirtis."
               photo="/photos/elite-aurinas.jpg"
               alt="Aurinas Ivaškevičius"
-              objectPosition="center 15%"
+              objectPosition="center bottom"
             />
             <PersonCard
               name="Skirmantas Šestavickas"
@@ -222,7 +222,7 @@ export default function Elite() {
             background: 'var(--kc-black)', color: 'var(--kc-bone)',
             padding: 'clamp(28px, 5vw, 48px)',
           }}>
-            <Eyebrow inverse>Siekiamybė · Per 2–3 metus</Eyebrow>
+            <Eyebrow inverse>Vizija</Eyebrow>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(32px, 5vw, 60px)',
@@ -235,7 +235,7 @@ export default function Elite() {
               marginTop: 20, fontSize: 17, color: 'rgba(244,241,234,0.75)',
               maxWidth: 560, lineHeight: 1.6,
             }}>
-              Per 2–3 metus suformuoti stipriausią Lietuvoje 2017–2018 metų gimimo futbolininkų grupę, galinčią papildyti Lietuvos jaunimo rinktines.
+              Siekiamybė: per 2–3 metus suformuoti stipriausią Lietuvoje 2017–2018 metų gimimo futbolininkų grupę, galinčią papildyti Lietuvos jaunimo rinktines.
             </p>
           </div>
         </div>
