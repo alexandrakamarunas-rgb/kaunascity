@@ -173,16 +173,8 @@ export default function Elite() {
               objectPosition="center top"
             />
             <PersonCard
-              name="Skirmantas Šestavickas"
-              title="Partnerystės ir komercijos vadovas"
-              subtitle=""
-              photo="/photos/elite-skirmantas.jpg"
-              alt="Skirmantas Šestavickas"
-              objectPosition="center 25%"
-            />
-            <PersonCard
               name="Saulius Bakšaitis"
-              title="Treneris"
+              title="Partnerystės ir komercijos vadovas"
               subtitle=""
               photo="/photos/elite-saulius.jpg"
               alt="Saulius Bakšaitis"
