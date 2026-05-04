@@ -1,4 +1,3 @@
-Options -MultiViews
 RewriteEngine On
 
 # Handle requests for files that exist (images, css, js, fonts)
