@@ -197,6 +197,9 @@ export default function SummerCamp() {
           <p style={{ margin: 0 }}>
             Kaunas City Summer Camp – tai savaitės trukmės futbolo dienos stovykla vaikams nuo 6 iki 14 metų. Profesionalūs treneriai, turnyrai, ekskursijos, baseinas ir įspūdingi prisiminimai visam gyvenimui.
           </p>
+          <p style={{ marginTop: 16, fontWeight: 700 }}>
+            Vyriausias treneris — Lukas Spalvis.
+          </p>
           <p style={{ marginTop: 20 }}>
             Stovykla vyksta dviem pamainomis liepos mėnesį. Viena pamaina – 5 dienos, 240 €, į kainą įskaičiuotas maitinimas, pramogos ir stovyklos marškinėliai.
           </p>
@@ -227,7 +230,7 @@ export default function SummerCamp() {
               {
                 icon: '04',
                 title: 'Baseinas, ekskursijos, turnyrai',
-                body: 'Programa sudaryta taip, kad vaikai ne tik trenируotųsi, bet ir linksmai leistų laiką – baseinas, Dariaus ir Girėno stadionas, Sauna77.',
+                body: 'Programa sudaryta taip, kad vaikai ne tik treniruotųsi, bet ir linksmai leistų laiką.',
               },
             ].map((f, i) => (
               <div key={i} style={{
