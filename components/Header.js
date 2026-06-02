@@ -24,14 +24,15 @@ export default function Header() {
 
   const navLinkStyle = (href) => {
     const isActive = href === '/' ? active === '/' : active === href;
+    const isSummer = href === '/summercamp';
     return {
       fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 13,
       letterSpacing: '.18em', textTransform: 'uppercase',
       cursor: 'pointer',
       opacity: isActive ? 1 : 0.7,
-      borderBottom: isActive ? '2px solid var(--kc-bone)' : '2px solid transparent',
+      borderBottom: isActive ? `2px solid ${isSummer ? '#FFD600' : 'var(--kc-bone)'}` : '2px solid transparent',
       paddingBottom: 2,
-      color: 'var(--kc-bone)',
+      color: isSummer ? '#FFD600' : 'var(--kc-bone)',
     };
   };
 

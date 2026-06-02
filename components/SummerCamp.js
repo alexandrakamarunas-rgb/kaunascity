@@ -266,44 +266,66 @@ export default function SummerCamp() {
           <Rule width={80} weight={6} />
           <div className="two-col" style={{ marginTop: 24, maxWidth: 800 }}>
             {[
-              { label: 'I pamaina', dates: 'Liepos 20 – liepos 24 d.', note: '5 dienos · 240 €' },
-              { label: 'II pamaina', dates: 'Liepos 27 – liepos 31 d.', note: '5 dienos · 240 €' },
+              {
+                label: 'I pamaina', dates: 'Liepos 20 – liepos 24 d.', note: '5 dienos · 240 €',
+                vietos: [
+                  { label: 'Vieta A', soldOut: true },
+                  { label: 'Vieta B', name: 'Lapių stadionas', addr: 'Merkio g. 3, Lapės' },
+                ],
+              },
+              {
+                label: 'II pamaina', dates: 'Liepos 27 – liepos 31 d.', note: '5 dienos · 240 €',
+                vietos: [
+                  { label: 'Vieta A', name: 'Kauno kolegija', addr: 'Pramonės pr. 20, Kaunas' },
+                  { label: 'Vieta B', name: 'Lapių stadionas', addr: 'Merkio g. 3, Lapės' },
+                ],
+              },
             ].map((s, i) => (
-              <div key={i} style={{
-                background: 'var(--kc-paper)', border: '2px solid var(--kc-black)',
-                padding: '24px 28px',
-              }}>
-                <div style={{ ...labelStyle, marginBottom: 8 }}>{s.label}</div>
+              <div key={i}>
                 <div style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(20px, 2.5vw, 28px)',
-                  lineHeight: 1, textTransform: 'uppercase', marginBottom: 8,
-                }}>{s.dates}</div>
-                <div style={{
-                  fontFamily: 'var(--font-mono)', fontSize: 13,
-                  color: 'var(--fg3)', letterSpacing: '.06em',
-                }}>{s.note}</div>
-              </div>
-            ))}
-          </div>
-          <div className="two-col" style={{ marginTop: 2, maxWidth: 800 }}>
-            {[
-              { label: 'Vieta A', name: 'Kauno kolegija', addr: 'Pramonės pr. 20, Kaunas' },
-              { label: 'Vieta B', name: 'Lapių stadionas', addr: 'Merkio g. 3, Lapės' },
-            ].map((l, i) => (
-              <div key={i} style={{
-                background: 'var(--kc-bone)', border: '2px solid var(--kc-black)',
-                padding: '24px 28px',
-              }}>
-                <div style={{ ...labelStyle, marginBottom: 8 }}>{l.label}</div>
-                <div style={{
-                  fontFamily: 'var(--font-headline)', fontWeight: 700,
-                  fontSize: 17, textTransform: 'uppercase', marginBottom: 6,
-                }}>{l.name}</div>
-                <div style={{
-                  fontFamily: 'var(--font-mono)', fontSize: 12,
-                  color: 'var(--fg3)', letterSpacing: '.06em',
-                }}>{l.addr}</div>
+                  background: 'var(--kc-black)', color: 'var(--kc-bone)',
+                  border: '2px solid var(--kc-black)', padding: '24px 28px',
+                }}>
+                  <div style={{ ...labelStyle, color: 'rgba(244,241,234,0.5)', marginBottom: 8 }}>{s.label}</div>
+                  <div style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 'clamp(18px, 2.5vw, 26px)',
+                    lineHeight: 1, textTransform: 'uppercase', marginBottom: 8,
+                  }}>{s.dates}</div>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)', fontSize: 13,
+                    color: 'rgba(244,241,234,0.5)', letterSpacing: '.06em',
+                  }}>{s.note}</div>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 2 }}>
+                  {s.vietos.map((v, vi) => (
+                    <div key={vi} style={{
+                      background: v.soldOut ? 'var(--kc-black)' : 'var(--kc-bone)',
+                      border: '2px solid var(--kc-black)',
+                      padding: '16px 20px',
+                    }}>
+                      <div style={{ ...labelStyle, marginBottom: 6, color: v.soldOut ? 'rgba(244,241,234,0.4)' : 'var(--fg3)' }}>{v.label}</div>
+                      {v.soldOut ? (
+                        <div style={{
+                          fontFamily: 'var(--font-headline)', fontWeight: 700,
+                          fontSize: 14, letterSpacing: '.12em', textTransform: 'uppercase',
+                          color: '#FF4444',
+                        }}>Vietų nebėra</div>
+                      ) : (
+                        <>
+                          <div style={{
+                            fontFamily: 'var(--font-headline)', fontWeight: 700,
+                            fontSize: 15, textTransform: 'uppercase', marginBottom: 4,
+                          }}>{v.name}</div>
+                          <div style={{
+                            fontFamily: 'var(--font-mono)', fontSize: 11,
+                            color: 'var(--fg3)', letterSpacing: '.06em',
+                          }}>{v.addr}</div>
+                        </>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
