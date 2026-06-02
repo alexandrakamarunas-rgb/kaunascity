@@ -317,7 +317,6 @@ export default function SummerCamp() {
                             color: 'var(--fg3)', letterSpacing: '.06em',
                           }}>Lapių stadionas · Merkio g. 3, Lapės</div>
                         </>
-                      )
                       ) : (
                         <>
                           <div style={{
