@@ -300,17 +300,24 @@ export default function SummerCamp() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 2 }}>
                   {s.vietos.map((v, vi) => (
                     <div key={vi} style={{
-                      background: v.soldOut ? 'var(--kc-black)' : 'var(--kc-bone)',
+                      background: 'var(--kc-bone)',
                       border: '2px solid var(--kc-black)',
                       padding: '16px 20px',
                     }}>
-                      <div style={{ ...labelStyle, marginBottom: 6, color: v.soldOut ? 'rgba(244,241,234,0.4)' : 'var(--fg3)' }}>{v.label}</div>
+                      <div style={{ ...labelStyle, marginBottom: 6, color: 'var(--fg3)' }}>{v.label}</div>
                       {v.soldOut ? (
-                        <div style={{
-                          fontFamily: 'var(--font-headline)', fontWeight: 700,
-                          fontSize: 14, letterSpacing: '.12em', textTransform: 'uppercase',
-                          color: '#FF4444',
-                        }}>Vietų nebėra</div>
+                        <>
+                          <div style={{
+                            fontFamily: 'var(--font-headline)', fontWeight: 700,
+                            fontSize: 15, textTransform: 'uppercase', marginBottom: 4,
+                            color: '#FF4444',
+                          }}>Vietų nebėra</div>
+                          <div style={{
+                            fontFamily: 'var(--font-mono)', fontSize: 11,
+                            color: 'var(--fg3)', letterSpacing: '.06em',
+                          }}>Lapių stadionas · Merkio g. 3, Lapės</div>
+                        </>
+                      )
                       ) : (
                         <>
                           <div style={{
