@@ -269,8 +269,8 @@ export default function SummerCamp() {
               {
                 label: 'I pamaina', dates: 'Liepos 20 – liepos 24 d.', note: '5 dienos · 240 €',
                 vietos: [
-                  { label: 'Vieta A', soldOut: true },
-                  { label: 'Vieta B', name: 'Lapių stadionas', addr: 'Merkio g. 3, Lapės' },
+                  { label: 'Vieta A', name: 'Kauno kolegija', addr: 'Pramonės pr. 20, Kaunas' },
+                  { label: 'Vieta B', soldOut: true },
                 ],
               },
               {
