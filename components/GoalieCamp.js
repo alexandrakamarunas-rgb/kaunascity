@@ -103,8 +103,20 @@ export default function GoalieCamp() {
           <div style={{
             marginTop: 20, background: 'var(--kc-paper)',
             border: '2px solid var(--kc-black)',
-            padding: 'clamp(20px, 3vw, 36px)',
+            display: 'grid', gridTemplateColumns: 'minmax(140px, 220px) 1fr',
           }}>
+            <div style={{ overflow: 'hidden', borderRight: '2px solid var(--kc-black)' }}>
+              <img
+                src="/photos/goaliecamp-algirdas.jpg"
+                alt="Algirdas Surgautas"
+                style={{
+                  width: '100%', height: '100%', minHeight: 180,
+                  objectFit: 'cover', objectPosition: 'center top',
+                  display: 'block',
+                }}
+              />
+            </div>
+            <div style={{ padding: 'clamp(20px, 3vw, 32px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <h2 style={{
               fontFamily: 'var(--font-headline)', fontWeight: 700,
               fontSize: 'clamp(22px, 3vw, 36px)',
@@ -120,6 +132,7 @@ export default function GoalieCamp() {
               marginTop: 8, fontFamily: 'var(--font-mono)', fontSize: 12,
               color: 'var(--fg3)', letterSpacing: '.06em',
             }}>Surgautas.a@gmail.com</div>
+            </div>
           </div>
         </div>
 
