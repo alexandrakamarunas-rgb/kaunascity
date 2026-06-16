@@ -11,6 +11,7 @@ const tabs = [
   ['/treneris', 'Treneris'],
   ['/elite', 'Elite'],
   ['/summercamp', 'Summer Camp'],
+  ['/goaliecamp', 'Vartininkai'],
   ['/kontaktai', 'Kontaktai'],
   ['/parama', '1,2%'],
   ['/parduotuve', 'Parduotuvė'],
