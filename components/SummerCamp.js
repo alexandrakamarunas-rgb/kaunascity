@@ -36,7 +36,7 @@ const schedule = [
       { time: '9.30–11.30',  text: 'Treniruotė' },
       { time: '12.00–12.45', text: 'Pietūs' },
       { time: '13.00',       text: 'Vykstame į stadioną' },
-      { time: '13.30–15.30', text: 'Ekskursija po Dariaus ir Girėno stadioną' },
+      { time: '13.30–15.30', text: 'Lazertronas' },
       { time: '16.30',       text: 'Laisvas laikas stadione' },
       { time: '17.00',       text: 'Vaikų pasiėmimas' },
     ],
@@ -70,7 +70,7 @@ const schedule = [
     items: [
       { time: '8.00–9.00',   text: 'Vaikų pasitikimas' },
       { time: '9.00–9.30',   text: 'Maitinimas, užkandžiai dienos metu' },
-      { time: '10.00–12.00', text: 'Filmas apie futbolą' },
+      { time: '10.00–12.00', text: 'Sveiko maisto pamokėlė ir dirbtuvės' },
       { time: '12.00–12.45', text: 'Pietūs' },
       { time: '13.00–16.30', text: 'Konkursai, turnyrai, geriausių žaidėjų rinkimai, apdovanojimai' },
       { time: '17.00',       text: 'Vaikų pasiėmimas, stovyklos uždarymas' },
