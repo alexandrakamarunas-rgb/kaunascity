@@ -19,7 +19,6 @@ const sections = [
     { label: 'Treneris',     href: '/treneris' },
     { label: 'Elite',        href: '/elite' },
     { label: 'Summer Camp',  href: '/summercamp' },
-    { label: 'Vartininkų Stovykla', href: '/goaliecamp' },
   ]],
   ['Kontaktai', [
     { label: 'Kontaktai', href: '/kontaktai' },
