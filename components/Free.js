@@ -25,8 +25,8 @@ const errorStyle = {
 
 const perks = [
   { icon: '⚽', text: 'Profesionalūs treneriai' },
-  { icon: '🏟', text: 'Modernia infrastruktūra' },
-  { icon: '📋', text: 'Individuali pažanga' },
+  { icon: '🏆', text: 'Turnyrai' },
+  { icon: '📋', text: 'Individualus dėmesys' },
   { icon: '🤝', text: 'Draugiška atmosfera' },
 ];
 
