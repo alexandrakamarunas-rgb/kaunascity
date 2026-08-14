@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { Eyebrow, Rule, Section, Button, LT } from './Bits';
 
-// Įklijuok Google Drive vaizdo įrašo ID čia (iš dalies ссылки /file/d/XXXX/view)
-const VIDEO_ID = '';
 
 const labelStyle = {
   fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
@@ -219,39 +217,28 @@ export default function SummerCamp() {
             fontSize: 13, letterSpacing: '.12em', textTransform: 'uppercase',
             color: '#FFD600', border: '2px solid #FFD600',
             padding: '10px 18px', flexShrink: 0,
-          }}><LT>Iki pasimatymo 2026 m.!</LT></div>
+          }}><LT>Iki kitų kartų!</LT></div>
         </div>
 
         {/* VIDEO */}
-        <div style={{ marginTop: 40 }}>
-          {VIDEO_ID ? (
-            <div style={{
-              position: 'relative', paddingBottom: '56.25%', height: 0,
-              border: '2px solid var(--kc-black)', overflow: 'hidden',
-            }}>
-              <iframe
-                src={`https://drive.google.com/file/d/${VIDEO_ID}/preview`}
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                allow="autoplay"
-                allowFullScreen
-              />
-            </div>
-          ) : (
-            <div style={{
-              background: 'var(--kc-paper)', border: '2px solid var(--kc-black)',
-              padding: 'clamp(40px,8vw,80px) 24px', textAlign: 'center',
-            }}>
-              <div style={{
-                fontFamily: 'var(--font-display)', fontSize: 48,
-                color: 'rgba(10,10,10,0.15)', lineHeight: 1, marginBottom: 16,
-              }}>▶</div>
-              <div style={{
-                fontFamily: 'var(--font-headline)', fontWeight: 700,
-                fontSize: 12, letterSpacing: '.18em', textTransform: 'uppercase',
-                color: 'var(--fg3)',
-              }}><LT>Vaizdo įrašas bus pridėtas netrukus</LT></div>
-            </div>
-          )}
+        <div style={{ marginTop: 48 }}>
+          <Eyebrow>Kaip tai buvo</Eyebrow>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(32px, 5vw, 60px)',
+            margin: '8px 0 20px', lineHeight: .92, textTransform: 'uppercase',
+          }}><LT>Pažiūrėkite, kaip sekėsi</LT></h2>
+          <video
+            controls
+            playsInline
+            style={{
+              width: '100%', display: 'block',
+              border: '2px solid var(--kc-black)',
+              background: '#000',
+            }}
+          >
+            <source src="/videos/summercamp-2025.mp4" type="video/mp4" />
+          </video>
         </div>
 
         {/* EMAIL SUBSCRIPTION */}
