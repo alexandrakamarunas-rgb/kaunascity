@@ -224,7 +224,7 @@ export default function SummerCamp() {
         <div style={{
           marginTop: 48,
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: '3fr 1fr',
           gap: 32,
           alignItems: 'stretch',
         }} className="video-split">
