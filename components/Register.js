@@ -23,8 +23,17 @@ const errorStyle = {
   marginTop: 6, display: 'block',
 };
 
+const AGE_GROUPS = ['U6', 'U8', 'U9', 'U11', 'U13'];
+
+const STADIUMS = [
+  { id: 'panemune', name: 'Panemunė', addr: 'Vaidoto g. 11, Kaunas' },
+  { id: 'kolegija', name: 'Kauno kolegijos stadionas', addr: 'Pramonės pr. 20, Kaunas' },
+  { id: 'lapiai',   name: 'Lapių mokyklos stadionas', addr: 'Merkio g. 3, Lapės' },
+];
+
 export default function Register() {
-  const [age, setAge] = useState('5-8');
+  const [age, setAge] = useState('U8');
+  const [stadium, setStadium] = useState('lapiai');
   const [state, handleSubmit] = useForm('mrerwpjd');
 
   return (
@@ -45,38 +54,67 @@ export default function Register() {
 
       {!state.succeeded && (
         <form onSubmit={handleSubmit} className="form-grid" style={{ marginTop: 28 }}>
-          <input type="hidden" name="Amžiaus grupė" value={age === '5-8' ? '5–8 (Pradžia)' : '9–12 (Komanda)'} />
+          <input type="hidden" name="Amžiaus grupė" value={age} />
+          <input type="hidden" name="Stadionas" value={STADIUMS.find(s => s.id === stadium)?.name} />
 
+          {/* Age groups */}
           <div style={{ gridColumn: '1 / -1' }}>
             <label style={labelStyle}><LT>Amžiaus grupė</LT></label>
-            <div className="age-cards">
-              {[
-                { id: '5-8',  age: '5–8',  name: 'Pradžia' },
-                { id: '9-12', age: '9–12', name: 'Komanda' },
-              ].map(g => (
-                <label key={g.id} style={{
-                  background: age === g.id ? 'var(--kc-black)' : 'var(--kc-paper)',
-                  color:      age === g.id ? 'var(--kc-bone)'  : 'var(--kc-black)',
-                  border: '2px solid var(--kc-black)', padding: '18px 20px', cursor: 'pointer',
-                  display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12,
-                  boxShadow: age === g.id ? 'none' : 'var(--shadow-hard)',
-                  transform: age === g.id ? 'translate(2px,2px)' : 'none',
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              {AGE_GROUPS.map(g => (
+                <label key={g} style={{
+                  background: age === g ? 'var(--kc-black)' : 'var(--kc-paper)',
+                  color:      age === g ? 'var(--kc-bone)'  : 'var(--kc-black)',
+                  border: '2px solid var(--kc-black)', padding: '14px 22px', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  boxShadow: age === g ? 'none' : 'var(--shadow-hard)',
+                  transform: age === g ? 'translate(2px,2px)' : 'none',
                   transition: 'all 120ms var(--ease-snap)',
+                  minWidth: 72,
                 }}>
                   <input
-                    type="radio" name="_age_ui" value={g.id}
-                    checked={age === g.id} onChange={() => setAge(g.id)}
+                    type="radio" name="_age_ui" value={g}
+                    checked={age === g} onChange={() => setAge(g)}
                     style={{ display: 'none' }}
                   />
                   <span style={{
                     fontFamily: 'var(--font-display)',
-                    fontSize: 'clamp(36px, 6vw, 56px)',
-                    lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-.02em',
-                  }}>{g.age}</span>
-                  <span style={{
+                    fontSize: 'clamp(28px, 4vw, 40px)',
+                    lineHeight: 1, textTransform: 'uppercase',
+                  }}>{g}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Stadium */}
+          <div style={{ gridColumn: '1 / -1' }}>
+            <label style={labelStyle}><LT>Treniruočių vieta</LT></label>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
+              {STADIUMS.map(s => (
+                <label key={s.id} style={{
+                  background: stadium === s.id ? 'var(--kc-black)' : 'var(--kc-paper)',
+                  color:      stadium === s.id ? 'var(--kc-bone)'  : 'var(--kc-black)',
+                  border: '2px solid var(--kc-black)', padding: '16px 18px', cursor: 'pointer',
+                  boxShadow: stadium === s.id ? 'none' : 'var(--shadow-hard)',
+                  transform: stadium === s.id ? 'translate(2px,2px)' : 'none',
+                  transition: 'all 120ms var(--ease-snap)',
+                }}>
+                  <input
+                    type="radio" name="_stadium_ui" value={s.id}
+                    checked={stadium === s.id} onChange={() => setStadium(s.id)}
+                    style={{ display: 'none' }}
+                  />
+                  <div style={{
                     fontFamily: 'var(--font-headline)', fontWeight: 700,
-                    fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase',
-                  }}><LT>{g.name}</LT></span>
+                    fontSize: 13, letterSpacing: '.14em', textTransform: 'uppercase',
+                    marginBottom: 6,
+                  }}><LT>{s.name}</LT></div>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)', fontSize: 11,
+                    letterSpacing: '.06em',
+                    color: stadium === s.id ? 'rgba(244,241,234,0.6)' : 'var(--fg3)',
+                  }}>{s.addr}</div>
                 </label>
               ))}
             </div>
@@ -147,7 +185,7 @@ export default function Register() {
             fontSize: 17, color: 'var(--fg-muted-inverse)', marginTop: 20,
             maxWidth: 520, marginLeft: 'auto', marginRight: 'auto',
           }}>
-            <LT>Susisieksim per 2 darbo dienas dėl pirmos treniruotės Lapių stadione.</LT>
+            <LT>Susisieksim per 2 darbo dienas dėl pirmos treniruotės.</LT>
           </p>
         </div>
       )}
