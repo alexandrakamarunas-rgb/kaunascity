@@ -221,18 +221,26 @@ export default function SummerCamp() {
         </div>
 
         {/* VIDEO */}
-        <div style={{ marginTop: 48 }}>
-          <Eyebrow>Kaip tai buvo</Eyebrow>
-          <h2 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(32px, 5vw, 60px)',
-            margin: '8px 0 20px', lineHeight: .92, textTransform: 'uppercase',
-          }}><LT>Pažiūrėkite, kaip sekėsi</LT></h2>
+        <div style={{
+          marginTop: 48,
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 32,
+          alignItems: 'center',
+        }} className="video-split">
+          <div>
+            <Eyebrow>Kaip tai buvo</Eyebrow>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(40px, 5.5vw, 80px)',
+              margin: '12px 0 0', lineHeight: .88, textTransform: 'uppercase',
+            }}><LT>Pažiū&shy;rėkite,<br />kaip<br />sekėsi</LT></h2>
+          </div>
           <video
             controls
             playsInline
             style={{
-              width: '100%', maxWidth: 720, display: 'block',
+              width: '100%', display: 'block',
               border: '2px solid var(--kc-black)',
               background: '#000',
             }}
@@ -240,6 +248,11 @@ export default function SummerCamp() {
             <source src="/videos/summercamp-2025.mp4" type="video/mp4" />
           </video>
         </div>
+        <style>{`
+          @media (max-width: 640px) {
+            .video-split { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
 
         {/* EMAIL SUBSCRIPTION */}
         <div style={{
