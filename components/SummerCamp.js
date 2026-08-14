@@ -232,7 +232,7 @@ export default function SummerCamp() {
             controls
             playsInline
             style={{
-              width: '100%', display: 'block',
+              width: '100%', maxWidth: 720, display: 'block',
               border: '2px solid var(--kc-black)',
               background: '#000',
             }}
