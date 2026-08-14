@@ -226,21 +226,22 @@ export default function SummerCamp() {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: 32,
-          alignItems: 'center',
+          alignItems: 'stretch',
         }} className="video-split">
-          <div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Eyebrow>Kaip tai buvo</Eyebrow>
             <h2 style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(40px, 5.5vw, 80px)',
-              margin: '12px 0 0', lineHeight: .88, textTransform: 'uppercase',
+              fontSize: 'clamp(56px, 8vw, 130px)',
+              margin: '12px 0 0', lineHeight: .85, textTransform: 'uppercase',
             }}><LT>Pažiū&shy;rėkite,<br />kaip<br />sekėsi</LT></h2>
           </div>
           <video
             controls
             playsInline
             style={{
-              width: '100%', display: 'block',
+              width: '100%', height: '100%', display: 'block',
+              objectFit: 'cover',
               border: '2px solid var(--kc-black)',
               background: '#000',
             }}
