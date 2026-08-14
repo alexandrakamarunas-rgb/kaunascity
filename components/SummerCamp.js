@@ -1,7 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Eyebrow, Rule, Section, Button } from './Bits';
+import { Eyebrow, Rule, Section, Button, LT } from './Bits';
+
+// Įklijuok Google Drive vaizdo įrašo ID čia (iš dalies ссылки /file/d/XXXX/view)
+const VIDEO_ID = '';
 
 const labelStyle = {
   fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
@@ -172,6 +175,8 @@ export default function SummerCamp() {
   const [location, setLocation] = useState('');
   const [shift, setShift] = useState('');
   const [state, handleSubmit] = useForm('mrerwpjd');
+  const [emailState, handleEmailSubmit] = useForm('mrerwpjd');
+  const [notifyEmail, setNotifyEmail] = useState('');
 
   return (
     <Section padded={false}>
@@ -187,6 +192,112 @@ export default function SummerCamp() {
           <Eyebrow style={{ marginTop: 8 }}>Futbolo stovykla · Liepos mėn.</Eyebrow>
         </div>
         <Rule width={120} weight={8} />
+
+        {/* FINISHED BANNER */}
+        <div style={{
+          marginTop: 28,
+          background: 'var(--kc-black)', color: 'var(--kc-bone)',
+          padding: 'clamp(24px,4vw,40px) clamp(24px,4vw,48px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          flexWrap: 'wrap', gap: 16,
+          border: '2px solid var(--kc-black)',
+        }}>
+          <div>
+            <div style={{
+              fontFamily: 'var(--font-headline)', fontWeight: 700,
+              fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase',
+              color: 'rgba(244,241,234,0.5)', marginBottom: 8,
+            }}>2025 · Liepos 20 – 31 d.</div>
+            <div style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(28px,5vw,52px)',
+              lineHeight: .95, textTransform: 'uppercase',
+            }}><LT>Stovykla sėkmingai baigta</LT></div>
+          </div>
+          <div style={{
+            fontFamily: 'var(--font-headline)', fontWeight: 700,
+            fontSize: 13, letterSpacing: '.12em', textTransform: 'uppercase',
+            color: '#FFD600', border: '2px solid #FFD600',
+            padding: '10px 18px', flexShrink: 0,
+          }}><LT>Iki pasimatymo 2026 m.!</LT></div>
+        </div>
+
+        {/* VIDEO */}
+        <div style={{ marginTop: 40 }}>
+          {VIDEO_ID ? (
+            <div style={{
+              position: 'relative', paddingBottom: '56.25%', height: 0,
+              border: '2px solid var(--kc-black)', overflow: 'hidden',
+            }}>
+              <iframe
+                src={`https://drive.google.com/file/d/${VIDEO_ID}/preview`}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                allow="autoplay"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <div style={{
+              background: 'var(--kc-paper)', border: '2px solid var(--kc-black)',
+              padding: 'clamp(40px,8vw,80px) 24px', textAlign: 'center',
+            }}>
+              <div style={{
+                fontFamily: 'var(--font-display)', fontSize: 48,
+                color: 'rgba(10,10,10,0.15)', lineHeight: 1, marginBottom: 16,
+              }}>▶</div>
+              <div style={{
+                fontFamily: 'var(--font-headline)', fontWeight: 700,
+                fontSize: 12, letterSpacing: '.18em', textTransform: 'uppercase',
+                color: 'var(--fg3)',
+              }}><LT>Vaizdo įrašas bus pridėtas netrukus</LT></div>
+            </div>
+          )}
+        </div>
+
+        {/* EMAIL SUBSCRIPTION */}
+        <div style={{
+          marginTop: 40,
+          background: 'var(--kc-black)', color: 'var(--kc-bone)',
+          padding: 'clamp(28px,5vw,48px)',
+        }}>
+          {!emailState.succeeded ? (
+            <>
+              <h2 style={{
+                fontFamily: 'var(--font-headline)', fontWeight: 700,
+                fontSize: 'clamp(14px,2.5vw,18px)', letterSpacing: '.14em',
+                textTransform: 'uppercase', margin: '0 0 20px',
+              }}><LT>Gaukite naujienas apie artėjančias stovyklas</LT></h2>
+              <form onSubmit={handleEmailSubmit} style={{
+                display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start',
+              }}>
+                <input type="hidden" name="Forma" value="Summer Camp naujienos" />
+                <input
+                  type="email" name="email" required
+                  value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
+                  placeholder="jusu@pastas.lt"
+                  style={{
+                    flex: '1 1 240px', padding: '14px 16px',
+                    fontFamily: 'var(--font-body)', fontSize: 15,
+                    background: 'transparent', color: 'var(--kc-bone)',
+                    border: '2px solid rgba(244,241,234,0.4)', borderRadius: 0, outline: 'none',
+                  }}
+                />
+                <Button type="submit" variant="inverse" disabled={emailState.submitting}>
+                  {emailState.submitting ? <LT>Siunčiama...</LT> : <LT>Prenumeruoti</LT>}
+                </Button>
+              </form>
+            </>
+          ) : (
+            <div>
+              <Eyebrow inverse><LT>Prenumerata aktyvuota</LT></Eyebrow>
+              <div style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(36px,6vw,64px)',
+                lineHeight: .95, textTransform: 'uppercase', marginTop: 12,
+              }}><LT>Informuosime!</LT></div>
+            </div>
+          )}
+        </div>
 
         {/* INTRO */}
         <div style={{
@@ -388,132 +499,6 @@ export default function SummerCamp() {
           </div>
         </div>
 
-        {/* REGISTRATION FORM */}
-        <div style={{ marginTop: 56 }}>
-          <Eyebrow>Registracija</Eyebrow>
-          <Rule width={80} weight={6} />
-
-          {!state.succeeded ? (
-            <form onSubmit={handleSubmit} style={{ marginTop: 24, maxWidth: 720 }}>
-              <input type="hidden" name="Forma" value="Summer Camp" />
-              <input type="hidden" name="Amžius" value={age} />
-              <input type="hidden" name="Stovyklos vieta" value={location} />
-              <input type="hidden" name="Pamaina" value={shift} />
-
-              {/* Name */}
-              <div style={{ marginBottom: 24 }}>
-                <label style={labelStyle}>Vaiko vardas ir pavardė</label>
-                <input style={fieldStyle} name="Vaiko vardas ir pavardė" placeholder="Jonas Jonaitis" required />
-              </div>
-
-              {/* Age */}
-              <div style={{ marginBottom: 24 }}>
-                <label style={labelStyle}>Amžius</label>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  {[
-                    { value: '6–8 metai', label: '6–8 metai' },
-                    { value: '9–11 metų', label: '9–11 metų' },
-                    { value: '11–14 metų', label: '11–14 metų' },
-                  ].map(opt => (
-                    <CheckOption
-                      key={opt.value}
-                      name="age_ui"
-                      value={opt.value}
-                      label={opt.label}
-                      checked={age === opt.value}
-                      onChange={() => setAge(opt.value)}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Location */}
-              <div style={{ marginBottom: 24 }}>
-                <label style={labelStyle}>Stovyklos vieta</label>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  {[
-                    { value: 'Kauno kolegija (Pramonės pr. 20)', label: 'Kauno kolegija — Pramonės pr. 20, Kaunas' },
-                    { value: 'Lapių stadionas (Merkio g. 3)', label: 'Lapių stadionas — Merkio g. 3, Lapės' },
-                  ].map(opt => (
-                    <CheckOption
-                      key={opt.value}
-                      name="location_ui"
-                      value={opt.value}
-                      label={opt.label}
-                      checked={location === opt.value}
-                      onChange={() => setLocation(opt.value)}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Shift */}
-              <div style={{ marginBottom: 24 }}>
-                <label style={labelStyle}>Pamaina</label>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  {[
-                    { value: 'I pamaina: Liepos 20–24 d.', label: 'I pamaina — Liepos 20–24 d. (5 dienos)' },
-                    { value: 'II pamaina: Liepos 27–31 d.', label: 'II pamaina — Liepos 27–31 d. (5 dienos)' },
-                  ].map(opt => (
-                    <CheckOption
-                      key={opt.value}
-                      name="shift_ui"
-                      value={opt.value}
-                      label={opt.label}
-                      checked={shift === opt.value}
-                      onChange={() => setShift(opt.value)}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Email */}
-              <div style={{ marginBottom: 24 }}>
-                <label style={labelStyle}>El. paštas</label>
-                <input style={fieldStyle} type="email" name="email" placeholder="tevai@example.lt" required />
-                <ValidationError field="email" errors={state.errors} style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#B00020', marginTop: 6, display: 'block' }} />
-              </div>
-
-              {/* Phone */}
-              <div style={{ marginBottom: 32 }}>
-                <label style={labelStyle}>Telefono numeris</label>
-                <input style={fieldStyle} type="tel" name="Telefono numeris" placeholder="+370 600 00000" required />
-              </div>
-
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-                <div style={{
-                  fontFamily: 'var(--font-mono)', fontSize: 12,
-                  letterSpacing: '.08em', color: 'var(--fg3)',
-                }}>
-                  Forma siunčiama į info@kaunascityfa.lt
-                </div>
-                <Button type="submit" size="lg" disabled={state.submitting}>
-                  {state.submitting ? 'Siunčiama...' : 'Registruotis →'}
-                </Button>
-              </div>
-              <ValidationError errors={state.errors} style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#B00020', marginTop: 16, display: 'block' }} />
-            </form>
-          ) : (
-            <div style={{
-              marginTop: 24, background: 'var(--kc-black)',
-              color: 'var(--kc-bone)', padding: 'clamp(28px, 5vw, 48px)',
-              maxWidth: 720,
-            }}>
-              <Eyebrow inverse>Užregistruota</Eyebrow>
-              <h2 style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(48px, 8vw, 80px)',
-                margin: '16px 0', lineHeight: .95, textTransform: 'uppercase',
-              }}>Lauksim!</h2>
-              <Rule width={96} weight={8} inverse />
-              <p style={{
-                fontSize: 16, color: 'rgba(244,241,234,0.75)', marginTop: 20, lineHeight: 1.6,
-              }}>
-                Susisieksim dėl apmokėjimo ir papildomos informacijos.
-              </p>
-            </div>
-          )}
-        </div>
 
         {/* FAQ */}
         <div style={{ marginTop: 56, marginBottom: 64 }}>
