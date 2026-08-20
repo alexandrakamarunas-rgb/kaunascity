@@ -23,7 +23,7 @@ const errorStyle = {
   marginTop: 6, display: 'block',
 };
 
-const AGE_GROUPS = ['U6', 'U8', 'U9', 'U11', 'U13'];
+const AGE_GROUPS = ['U7', 'U9', 'U11', 'U13'];
 
 const STADIUMS = [
   { id: 'panemune', name: 'Panemunė', addr: 'Vaidoto g. 11, Kaunas' },
