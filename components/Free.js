@@ -63,7 +63,7 @@ export default function Free() {
           textTransform: 'uppercase', color: '#FFD600',
           maxWidth: 640, margin: '0 auto 16px',
         }}>
-          <LT>Jūs gavote nemokamą mėnesį treniruočių</LT>
+          <LT>Jūs gavote savaitę nemokamų treniruočių</LT>
         </p>
         <p style={{
           fontFamily: 'var(--font-body)', fontSize: 17,
@@ -218,7 +218,7 @@ export default function Free() {
                   <LT>Forma siunčiama į info@kaunascityfa.lt</LT>
                 </div>
                 <Button type="submit" variant="inverse" disabled={state.submitting}>
-                  {state.submitting ? <LT>Siunčiama...</LT> : <LT>Gauti nemokamą mėnesį</LT>}
+                  {state.submitting ? <LT>Siunčiama...</LT> : <LT>Gauti nemokamą savaitę</LT>}
                 </Button>
               </div>
 
