@@ -40,7 +40,7 @@ const coaches = [
     name: 'Paulius Smaryginas',
     role: 'Akademijos treneris · Elite',
     location: 'Panemunė · Vaidoto g. 11, Kaunas',
-    bio: 'Vadovauja U11 elitinei grupei (2015/2016 m. gim.). Treniruotės vyksta tris kartus per savaitę, o antradieniais Ignas Bytautas veda fizinio rengimo pratybas.',
+    bio: 'Vadovauja U11 elitinei grupei (2015/2016 m. gim.). Treniruotės vyksta 3 kartus per savaitę, o antradieniais Ignas Bytautas veda fizinio rengimo pratybas.',
     schedule: [
       {
         days: 'Pirmadienis · Trečiadienis · Penktadienis',
