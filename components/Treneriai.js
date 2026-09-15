@@ -40,7 +40,7 @@ const coaches = [
     name: 'Paulius Smaryginas',
     role: 'Akademijos treneris · Elite',
     location: 'Panemunė · Vaidoto g. 11, Kaunas',
-    bio: 'Vadovauja U11 elitinei grupei (2015/2016 m. gim.). Treniruotės vyksta 3 kartus per savaitę, o antradieniais Ignas Bytautas veda fizinio rengimo pratybas.',
+    bio: 'Vadovauja U11 elitinei grupei (2015/2016 m. gim.). Treniruotės vyksta 2 kartus per savaitę.',
     schedule: [
       {
         days: 'Pirmadienis · Trečiadienis · Penktadienis',
@@ -54,13 +54,6 @@ const coaches = [
           { group: 'U9 su Kauno Atletu', time: '18:00' },
         ],
       },
-      {
-        days: 'Antradienis',
-        groups: [
-          { group: 'Ignas Bytautas · Fizinio rengimo treniruotė', time: '17:00' },
-        ],
-        special: true,
-      },
     ],
   },
   {
@@ -68,7 +61,7 @@ const coaches = [
     name: 'Ignas Bytautas',
     role: 'Fizinio rengimo treneris',
     location: 'Panemunė · Vaidoto g. 11, Kaunas',
-    bio: 'Specializuojasi fizinio rengimo treniruotėse. Dirba su Pauliaus Smaryginso U11 elitine grupe, ugdydamas jėgą, greitį ir ištvermę.',
+    bio: 'Profesionalus sportininkas ir fizinio rengimo treneris. Specializuojasi fizinio rengimo treniruotėse. Dirba su Pauliaus Smaryginso U11 elitine grupe, ugdydamas jėgą, greitį ir ištvermę.',
     schedule: [
       {
         days: 'Antradienis',
