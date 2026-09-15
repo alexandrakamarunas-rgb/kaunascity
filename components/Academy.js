@@ -1,26 +1,54 @@
-import React from 'react';
-import { Eyebrow, Rule, Section, Photo, LT } from './Bits';
+import { Eyebrow, Rule, Section, LT } from './Bits';
 
-const groups = [
+const sections = [
   {
-    ageLines: ['5–8'],
-    name: 'Pradžia',
-    schedule: [
-      ['Antr', '16:00–17:00'],
-      ['Ketv', '16:00–17:00'],
-      ['Penkt', '16:30–17:30'],
+    year: '2025 – Pirmasis žingsnis',
+    body: [
+      '2025 metais Kauno rajone, Lapėse, pradėjo veiklą KAUNAS CITY FOOTBALL ACADEMY.',
+      'Pirmaisiais metais akademijoje sportavo apie 45 vaikai. Treniruotes vedė pats akademijos įkūrėjas Lukas Spalvis, savo patirtį iš profesionalaus futbolo perduodamas jauniesiems žaidėjams.',
+      'Nuo pat pradžių akademijos filosofija buvo paremta ne tik vaikų užimtumu, bet ir kokybišku futbolininkų ugdymu.',
     ],
-    focus: 'Pirmieji prisilietimai prie kamuolio, koordinacija ir žaidimas su draugais. Smagu, saugu, kasmet šiek tiek rimčiau.',
   },
   {
-    ageLines: ['9–12'],
-    name: 'Komanda',
-    schedule: [
-      ['Antr', '17:00–18:00'],
-      ['Ketv', '17:00–18:00'],
-      ['Penkt', '17:30–18:30'],
+    year: '2026 – Spartus augimas',
+    body: [
+      '2026 metais KAUNAS CITY FOOTBALL ACADEMY žengė į naują etapą.',
+      'Akademija išsiplėtė ir pradėjo veiklą ne tik Lapėse, bet ir Panemunėje bei Eiguliuose.',
+      'Per vienerius metus sportuojančių vaikų skaičius išaugo iki daugiau nei 140.',
+      'Akademijoje suformuotos U7, U9, U11 ir U13 amžiaus grupės, leidžiančios vaikams treniruotis pagal jų amžių, fizinį pasirengimą ir futbolo gebėjimus.',
     ],
-    focus: 'Technika, taktika ir pozicijos. Žaidimas mažomis komandomis kiekvieną treniruotę — kad augtų ir įgūdžiai, ir pasitikėjimas.',
+  },
+  {
+    year: 'Kaunas City vyrų komanda',
+    body: [
+      '2026 metais buvo suburta ir KAUNAS CITY vyrų futbolo komanda.',
+      'Komanda dalyvauja KAFF III lygoje bei LFF taurės varžybose.',
+      'Vyrų komandos sukūrimas tapo svarbia akademijos dalimi – tai galimybė jauniems futbolininkams matyti tolimesnį kelią akademijoje ir suprasti, kur gali nuvesti nuoseklus darbas bei futbolo ugdymas.',
+    ],
+  },
+  {
+    year: 'Kaunas City Elite',
+    body: [
+      '2026 metais akademijoje taip pat pradėtas projektas KAUNAS CITY ELITE, skirtas 2017–2018 metais gimusiems vaikams.',
+      'Tai aukštesnio lygio ugdymo kryptis, kurioje daugiausia dėmesio skiriama talentingiausių vaikų tobulėjimui, individualiam darbui ir aukštesniems treniruočių reikalavimams.',
+      'Projekto filosofija – talentą pastebėti kuo anksčiau ir suteikti jam tinkamą aplinką augti.',
+    ],
+  },
+  {
+    year: 'Elitinė 2015/2016 metų grupė',
+    body: [
+      'Kartu su Kauno „Atleto" akademija buvo sukurta elitinė 2015/2016 metais gimusių vaikų grupė.',
+      'Šios grupės tikslas – sudaryti talentingiausiems jauniems futbolininkams sąlygas treniruotis aukštesnio intensyvumo aplinkoje, daugiau dėmesio skiriant individualiam žaidėjų tobulėjimui ir pasirengimui aukštesniam futbolo lygiui.',
+    ],
+  },
+  {
+    year: 'Profesionali trenerių komanda',
+    body: [
+      'Augant akademijai, stiprėjo ir jos trenerių komanda.',
+      'Šiuo metu KAUNAS CITY FOOTBALL ACADEMY dirba 3 futbolo treneriai ir 1 fizinio rengimo treneris.',
+      'Akademijoje siekiama ugdyti futbolininką kompleksiškai. Vaikai mokomi ne tik futbolo technikos ir taktikos, bet taip pat lavinamas jų greitis, koordinacija, jėga, ištvermė ir kitos fizinės savybės.',
+      'Svarbi akademijos dalis – disciplina, atsakomybė, komandinis darbas ir supratimas, kad profesionalus sportas prasideda nuo kasdienio darbo.',
+    ],
   },
 ];
 
@@ -28,88 +56,120 @@ export default function Academy() {
   return (
     <Section padded={false}>
       <div className="page-pad">
+
+        {/* Page header */}
         <div className="academy-header">
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(52px, 8vw, 96px)',
             margin: 0, lineHeight: .95, textTransform: 'uppercase',
           }}>Akademija</h1>
-          <Eyebrow><LT>2 grupės · 5–12 metų · Lapių stadionas</LT></Eyebrow>
+          <Eyebrow><LT>Kaunas City Football Academy</LT></Eyebrow>
         </div>
         <Rule width={120} weight={8} />
 
-        <div style={{ marginTop: 28 }}>
-          <Photo
-            src="/photos/kaunas-city-cup-team.jpeg"
-            alt="Akademijos vaikai Kaunas City Cup turnyre"
-            ratio="21 / 9"
-            style={{ width: '100%' }}
-            objectPosition="50% 35%"
-            caption="vaikų komanda"
-          />
+        {/* Tagline */}
+        <p style={{
+          marginTop: 32,
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(22px, 3.5vw, 38px)',
+          lineHeight: 1.1,
+          textTransform: 'uppercase',
+          maxWidth: 720,
+          letterSpacing: '-.01em',
+        }}>
+          <LT>Nuo pirmųjų žingsnių futbole iki profesionalo svajonės.</LT>
+        </p>
+
+        {/* Intro */}
+        <div style={{ marginTop: 28, maxWidth: 720, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg1)' }}>
+            <LT>KAUNAS CITY FOOTBALL ACADEMY – futbolo akademija, kurios pagrindinis tikslas yra ugdyti jaunus futbolininkus, suteikti jiems profesionalią sporto aplinką ir padėti žingsnis po žingsnio siekti savo svajonės – tapti profesionaliais futbolininkais.</LT>
+          </p>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg2)' }}>
+            <LT>Akademijos įkūrėjas Lukas Spalvis – buvęs profesionalus Lietuvos futbolininkas, 2015 metais pripažintas geriausiu Lietuvos futbolininku, taip pat geriausiu Danijos futbolininku ir Danijos čempionu.</LT>
+          </p>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg2)' }}>
+            <LT>Lukas savo futbolo kelią pradėjo Lietuvoje. Profesionalaus futbolininko karjeros metu jis sukaupė didelę patirtį Lietuvos ir užsienio futbole. Baigęs profesionalaus futbolininko karjerą, Lukas nusprendė savo žinias, patirtį ir sukauptą supratimą apie profesionalų sportą skirti jaunajai kartai.</LT>
+          </p>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: 'var(--fg2)' }}>
+            <LT>Taip gimė idėja sukurti futbolo akademiją, kurioje vaikai galėtų ne tik mokytis žaisti futbolą, bet ir būti kryptingai ruošiami aukštesniam sportiniam lygiui. Kartu su bendraminčiais – futbolo agentu ir futbolo treneriu – buvo įkurta KAUNAS CITY FOOTBALL ACADEMY.</LT>
+          </p>
         </div>
 
-        <div className="two-col" style={{ marginTop: 28 }}>
-          {groups.map(g => (
-            <div key={g.name} style={{
-              background: 'var(--kc-paper)', border: '2px solid var(--kc-black)', padding: 24,
-            }}>
-              <div className="group-card-inner">
+        {/* Timeline sections */}
+        <div style={{ marginTop: 56 }}>
+          {sections.map((s, i) => (
+            <div key={i} style={{ marginBottom: 48 }}>
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 20, marginBottom: 20,
+              }}>
                 <div style={{
-                  fontFamily: 'var(--font-display)', fontSize: 'clamp(64px, 8vw, 88px)',
-                  lineHeight: .9, letterSpacing: '-.02em', color: 'var(--kc-black)',
-                  minHeight: 120,
-                  display: 'flex', flexDirection: 'column', justifyContent: 'flex-start',
+                  width: 6, height: 40, background: 'var(--kc-black)', flexShrink: 0,
+                }} />
+                <h2 style={{
+                  fontFamily: 'var(--font-headline)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(14px, 2vw, 16px)',
+                  letterSpacing: '.22em',
+                  textTransform: 'uppercase',
+                  margin: 0,
+                  color: 'var(--fg1)',
                 }}>
-                  {g.ageLines.map((line, i) => <div key={i}>{line}</div>)}
-                </div>
-                <div>
-                  <Eyebrow>{g.name}</Eyebrow>
-                  <div style={{ marginTop: 10, display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '4px 12px' }}>
-                    {g.schedule.map(([day, time]) => (
-                      <React.Fragment key={day}>
-                        <span style={{
-                          fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
-                          letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--fg3)',
-                        }}>{day}</span>
-                        <span style={{
-                          fontFamily: 'var(--font-mono)', fontSize: 13,
-                          letterSpacing: '.04em', color: 'var(--fg1)',
-                        }}>{time}</span>
-                      </React.Fragment>
-                    ))}
-                  </div>
-                  <p style={{ marginTop: 12, fontSize: 14, color: 'var(--fg2)', lineHeight: 1.5 }}>{g.focus}</p>
-                </div>
+                  <LT>{s.year}</LT>
+                </h2>
+              </div>
+              <div style={{
+                paddingLeft: 26,
+                borderLeft: '2px solid rgba(10,10,10,0.12)',
+                display: 'flex', flexDirection: 'column', gap: 12,
+                maxWidth: 700,
+              }}>
+                {s.body.map((p, pi) => (
+                  <p key={pi} style={{
+                    margin: 0, fontSize: 16, lineHeight: 1.65,
+                    color: pi === 0 ? 'var(--fg1)' : 'var(--fg2)',
+                  }}>
+                    <LT>{p}</LT>
+                  </p>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
+        {/* Philosophy — dark block */}
         <div style={{
-          marginTop: 40, padding: '28px 28px',
-          background: 'var(--kc-black)', color: 'var(--kc-bone)',
+          marginTop: 16,
+          padding: 'clamp(28px, 4vw, 48px)',
+          background: 'var(--kc-black)',
+          color: 'var(--kc-bone)',
         }}>
-          <Eyebrow inverse>Kaina</Eyebrow>
-          <div className="pricing-grid">
-            {[
-              { val: '€60', unit: '/mėn', label: <LT>Mėnesinis mokestis</LT> },
-              { val: '€0',  unit: '',     label: 'Pirma treniruotė' },
-              { val: '3×',  unit: '',     label: 'Treniruotės per savaitę' },
-            ].map(({ val, unit, label }) => (
-              <div key={val}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1 }}>
-                  {val}<span style={{ fontSize: '0.38em', opacity: .6 }}>{unit}</span>
-                </div>
-                <div style={{
-                  marginTop: 6, fontFamily: 'var(--font-headline)', fontWeight: 600,
-                  fontSize: 12, letterSpacing: '.18em', textTransform: 'uppercase',
-                  color: 'var(--fg-muted-inverse)',
-                }}>{label}</div>
-              </div>
-            ))}
-          </div>
+          <Eyebrow inverse><LT>Mūsų filosofija</LT></Eyebrow>
+          <p style={{
+            marginTop: 20,
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(22px, 3.5vw, 36px)',
+            lineHeight: 1.1,
+            textTransform: 'uppercase',
+            maxWidth: 640,
+          }}>
+            <LT>KAUNAS CITY FOOTBALL ACADEMY tikslas – sukurti aplinką, kurioje kiekvienas vaikas galėtų augti kaip futbolininkas ir kaip žmogus.</LT>
+          </p>
+          <p style={{
+            marginTop: 24, fontSize: 16, lineHeight: 1.7,
+            color: 'rgba(244,241,234,0.75)', maxWidth: 600,
+          }}>
+            <LT>Mes tikime, kad talentas yra tik pradžia. Kelias į profesionalų futbolą reikalauja darbo, disciplinos, tinkamų trenerių, tinkamos aplinkos ir nuoseklaus ugdymo.</LT>
+          </p>
+          <p style={{
+            marginTop: 14, fontSize: 16, lineHeight: 1.7,
+            color: 'rgba(244,241,234,0.75)', maxWidth: 600,
+          }}>
+            <LT>Todėl KAUNAS CITY FOOTBALL ACADEMY siekia būti vieta, kurioje jaunasis futbolininkas gali pradėti savo kelią nuo pirmojo prisilietimo prie kamuolio ir, turėdamas talentą bei norą dirbti, žingsnis po žingsnio siekti profesionalaus futbolo.</LT>
+          </p>
         </div>
+
       </div>
     </Section>
   );
