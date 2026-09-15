@@ -71,12 +71,14 @@ export default function Academy() {
         {/* Tagline */}
         <p style={{
           marginTop: 32,
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(22px, 3.5vw, 38px)',
-          lineHeight: 1.1,
+          fontFamily: 'var(--font-headline)',
+          fontWeight: 700,
+          fontSize: 'clamp(18px, 2.8vw, 28px)',
+          lineHeight: 1.25,
           textTransform: 'uppercase',
+          letterSpacing: '.06em',
           maxWidth: 720,
-          letterSpacing: '-.01em',
+          color: 'var(--fg1)',
         }}>
           <LT>Nuo pirmųjų žingsnių futbole iki profesionalo svajonės.</LT>
         </p>
@@ -100,30 +102,29 @@ export default function Academy() {
         {/* Timeline sections */}
         <div style={{ marginTop: 56 }}>
           {sections.map((s, i) => (
-            <div key={i} style={{ marginBottom: 48 }}>
+            <div key={i} style={{ marginBottom: 40, border: '2px solid var(--kc-black)' }}>
+              {/* Black header block */}
               <div style={{
-                display: 'flex', alignItems: 'center', gap: 20, marginBottom: 20,
+                background: 'var(--kc-black)',
+                color: 'var(--kc-bone)',
+                padding: '14px 24px',
               }}>
-                <div style={{
-                  width: 6, height: 40, background: 'var(--kc-black)', flexShrink: 0,
-                }} />
                 <h2 style={{
                   fontFamily: 'var(--font-headline)',
                   fontWeight: 700,
-                  fontSize: 'clamp(14px, 2vw, 16px)',
+                  fontSize: 'clamp(13px, 1.8vw, 15px)',
                   letterSpacing: '.22em',
                   textTransform: 'uppercase',
                   margin: 0,
-                  color: 'var(--fg1)',
                 }}>
                   <LT>{s.year}</LT>
                 </h2>
               </div>
+              {/* Content */}
               <div style={{
-                paddingLeft: 26,
-                borderLeft: '2px solid rgba(10,10,10,0.12)',
+                padding: '24px',
                 display: 'flex', flexDirection: 'column', gap: 12,
-                maxWidth: 700,
+                background: i % 2 === 0 ? 'var(--kc-bone)' : 'var(--kc-paper)',
               }}>
                 {s.body.map((p, pi) => (
                   <p key={pi} style={{
@@ -148,11 +149,14 @@ export default function Academy() {
           <Eyebrow inverse><LT>Mūsų filosofija</LT></Eyebrow>
           <p style={{
             marginTop: 20,
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(22px, 3.5vw, 36px)',
-            lineHeight: 1.1,
+            fontFamily: 'var(--font-headline)',
+            fontWeight: 700,
+            fontSize: 'clamp(18px, 2.5vw, 28px)',
+            lineHeight: 1.25,
             textTransform: 'uppercase',
+            letterSpacing: '.04em',
             maxWidth: 640,
+            color: 'var(--kc-bone)',
           }}>
             <LT>KAUNAS CITY FOOTBALL ACADEMY tikslas – sukurti aplinką, kurioje kiekvienas vaikas galėtų augti kaip futbolininkas ir kaip žmogus.</LT>
           </p>
