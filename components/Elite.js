@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Eyebrow, Rule, Section, Button, Photo } from './Bits';
 import elitePartnerLogos from './elitePartnerLogos';
 
-const elitePartnerNames = ['FBall Agency', '7Kick', 'Kaunas City Cup', 'Kaunas City Cup'];
+const elitePartnerNames = ['FBall Agency', '7Kick', 'Kaunas City Cup'];
 
 const labelStyle = {
   fontFamily: 'var(--font-headline)', fontWeight: 700, fontSize: 12,
@@ -128,7 +128,7 @@ export default function Elite() {
               <div style={{ ...labelStyle, color: 'rgba(244,241,234,0.55)', marginBottom: 16 }}>
                 Šiuo metu prie projekto prisijungė
               </div>
-              {['Kaunas City FA', 'Kauno futbolo akademija „Tauras"', 'Futbolo akademija „Ainiai"', 'FK Girionys'].map((a, i) => (
+              {['Kaunas City FA', 'Kauno futbolo akademija „Atletas"', 'Futbolo akademija „Ainiai"', 'FA Herojai'].map((a, i) => (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'center', gap: 16,
                   padding: '10px 0',
@@ -259,7 +259,7 @@ export default function Elite() {
         <SectionBlock eyebrow="Projekto partneriai">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 2,
           }}>
             {elitePartnerLogos.map((src, i) => (
@@ -267,12 +267,12 @@ export default function Elite() {
                 background: 'var(--kc-bone)',
                 border: '2px solid var(--kc-black)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                padding: '24px 20px', minHeight: 120,
+                padding: '32px 28px', minHeight: 140,
               }}>
                 <img
                   src={src}
                   alt={elitePartnerNames[i] || ''}
-                  style={{ height: 64, width: 'auto', maxWidth: '100%', display: 'block' }}
+                  style={{ height: 96, width: 'auto', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             ))}
