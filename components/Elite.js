@@ -164,22 +164,6 @@ export default function Elite() {
               photo="/photos/elite-lukas.jpg"
               alt="Lukas Spalvis"
             />
-            <PersonCard
-              name="Aurinas Ivaškevičius"
-              title="Tarptautinė patirtis"
-              subtitle="Futbolo turnyrų organizatorius. Aukšto lygio varžybinė patirtis."
-              photo="/photos/elite-aurinas.jpg"
-              alt="Aurinas Ivaškevičius"
-              objectPosition="center top"
-            />
-            <PersonCard
-              name="Saulius Bakšaitis"
-              title="Partnerystės ir komercijos vadovas"
-              subtitle=""
-              photo="/photos/elite-saulius.jpg"
-              alt="Saulius Bakšaitis"
-              objectPosition="center 20%"
-            />
           </div>
         </SectionBlock>
 
