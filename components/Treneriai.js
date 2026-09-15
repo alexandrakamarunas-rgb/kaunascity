@@ -61,7 +61,7 @@ const coaches = [
     name: 'Ignas Bytautas',
     role: 'Fizinio rengimo treneris',
     location: 'Panemunė · Vaidoto g. 11, Kaunas',
-    bio: 'Profesionalus sportininkas ir licenziotas fizinio rengimo treneris. Specializuojasi fizinio rengimo treniruotėse. Dirba su Pauliaus Smaryginso U11 elitine grupe, ugdydamas jėgą, greitį ir ištvermę.',
+    bio: 'Profesionalus sportininkas ir licencijuotas fizinio rengimo treneris.',
     schedule: [
       {
         days: 'Antradienis',
