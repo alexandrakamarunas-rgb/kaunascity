@@ -17,6 +17,7 @@ const sections = [
   ['Komanda', [
     { label: 'Apie komandą', href: '/komanda' },
     { label: 'Treneriai',    href: '/treneriai' },
+    { label: 'Treniruotės', href: '/treniruotes' },
     { label: 'Elite',        href: '/elite' },
     { label: 'Summer Camp',  href: '/summercamp' },
   ]],
