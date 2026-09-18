@@ -17,11 +17,12 @@ const PartnerLogos = () => (
 
 const MarqueeItems = () => (
   <span style={{ display: 'inline-flex', alignItems: 'center', paddingRight: 24 }}>
-    <span>5–12 <LT>metų</LT></span>
-    <Sep /><span><LT>2 grupės</LT></span>
+    <span>5–14 <LT>metų</LT></span>
     <Sep /><span><LT>3 treniruotės / sav.</LT></span>
     <Sep /><span>III lyga</span>
     <Sep /><span><LT>Lapių stadionas</LT></span>
+    <Sep /><span><LT>Panemunės stadionas</LT></span>
+    <Sep /><span><LT>Kauno kolegijos stadionas</LT></span>
     <Sep />
   </span>
 );
