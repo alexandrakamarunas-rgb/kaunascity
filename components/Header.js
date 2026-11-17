@@ -7,6 +7,7 @@ import { Button } from './Bits';
 const tabs = [
   ['/', 'Pradžia'],
   ['/akademija', 'Akademija'],
+  ['/playmakers', 'Playmakers'],
   ['/komanda', 'Komanda'],
   ['/treneriai', 'Treneriai'],
   ['/treniruotes', 'Treniruotės'],
